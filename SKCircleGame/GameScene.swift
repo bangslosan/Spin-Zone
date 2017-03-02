@@ -42,6 +42,8 @@ class GameScene: ClickableScene, SKPhysicsContactDelegate {
 	var allowTouchBegan = true
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		super.touchesBegan(touches, with: event) // for ability to press pause button
+		
 		if !allowTouchBegan {
 			return
 		}
