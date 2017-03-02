@@ -49,7 +49,6 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
             if view != nil {
                 self.present(view!, animated: true, completion: {})
             } else {
-                print("authenticated")
             }
         }
         

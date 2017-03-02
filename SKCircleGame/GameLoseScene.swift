@@ -15,6 +15,7 @@ class GameLoseScene: ClickableScene {
         self.sceneTitle(name: "Game Over", splitter: " ")
         
         addButtons()
+        self.addChild(ButtonSprite(bottomLeftTitle: "?"))
     }
     
     func addButtons() {
@@ -45,10 +46,6 @@ class GameLoseScene: ClickableScene {
         self.addChild(specialScore.background)
         self.addChild(specialScore.score)
         self.addChild(specialScore.levelTitle)
-    }
-
-    deinit {
-        print("Deinit of GameLoseScene")
     }
     
 }

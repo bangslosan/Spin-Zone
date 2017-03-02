@@ -15,7 +15,7 @@ class ButtonSprite: SKSpriteNode {
     let label: SKLabelNode
     var runOnClick: () -> () = { }
     
-    init(title: String, under: ButtonSprite?) {
+    init(title: String, under: ButtonSprite?, position: CGPoint=Constants.center) {
         label = SKLabelNode(title: title, fontSize: Constants.buttonFont, fontName: "Junegull", fontColor: DynamicBackground.currentColor)
         
         let shape = SKShapeNode(rect: CGRect(origin: CGPoint.zero, size: self.defaultSize), cornerRadius: (self.defaultSize.height) / 2)
@@ -25,7 +25,7 @@ class ButtonSprite: SKSpriteNode {
         
         super.init(texture: buttonTexture, color: UIColor.white, size: defaultSize)
         
-        self.position = under == nil ? Constants.center : CGPoint(x: under!.position.x, y: under!.position.y - (10.yScaled + self.size.height))
+        self.position = under == nil ? position : CGPoint(x: under!.position.x, y: under!.position.y - (10.yScaled + self.size.height))
         self.name = title
         label.position = CGPoint(x: self.position.x, y: self.position.y)
 

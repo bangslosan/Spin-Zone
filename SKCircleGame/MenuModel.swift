@@ -18,7 +18,7 @@ class MenuModel {
     }
     
     let scenes = ["play" : Scene.game, "try again" : Scene.game, "menu" : Scene.start, "settings": Scene.setting, "?" : Scene.about, "| |": Scene.about]
-    let transitions = ["play" : SKTransition.push(with: .left, duration: 0.5), "try again" : SKTransition.push(with: .up, duration: 0.5), "menu" : SKTransition.push(with: .up, duration: 0.5), "shop" : SKTransition.push(with: .right, duration: 0.5), "settings" : SKTransition.push(with: .up, duration: 0.5), "?" : SKTransition.push(with: .up, duration: 0.5), "| |" : SKTransition.push(with: .up, duration: 0.5)]
+    let transitions = ["play" : SKTransition.push(with: .left, duration: 0.5), "try again" : SKTransition.push(with: .up, duration: 0.5), "menu" : SKTransition.push(with: .up, duration: 0.5), "shop" : SKTransition.push(with: .right, duration: 0.5), "settings" : SKTransition.push(with: .up, duration: 0.5), "?" : SKTransition.push(with: .down, duration: 0.5), "| |" : SKTransition.push(with: .up, duration: 0.5)]
     
     func create(scene: Scene, current: SKScene) -> SKScene {
         let newScene: SKScene!

@@ -8,9 +8,9 @@
 
 import SpriteKit
 
-class GameScene: SKScene, SKPhysicsContactDelegate {
+class GameScene: ClickableScene, SKPhysicsContactDelegate {
 
-	var model: GameModel!
+	var gameModel: GameModel!
 	
 	var scoreLabel: SKLabelNode!
 	
@@ -26,13 +26,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 	}
 	
 	override func didMove(to view: SKView) {
+		self.model = MenuModel()
+		
 		self.physicsWorld.contactDelegate = self
 		
 		let level = GameModel.currentLevel
 		
-		self.model = GameModel(scene: self, level: level)
+		self.gameModel = GameModel(scene: self, level: level)
 		
-		self.model.createTracks()
+		self.gameModel.createTracks()
 		self.addChild(ButtonSprite(bottomLeftTitle: "||"))
 	}
 	
@@ -44,7 +46,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 			return
 		}
 		
-		for node in model.scene.children {
+		for node in gameModel.scene.children {
 			if let track = node as? TrackSprite {
 				track.shrink()
 			}
@@ -56,11 +58,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		
 		DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: {
 			self.touchable = true
-			self.model.applyTrackPhysics()
+			self.gameModel.applyTrackPhysics()
 			self.allowTouchBegan = true
 		})
 		DispatchQueue.main.asyncAfter(deadline: .now() + seconds + 0.05, execute: {
-			self.model.applyGoalPhysics()
+			self.gameModel.applyGoalPhysics()
 		})
 	}
 	
@@ -74,11 +76,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		let touched = contact.bodyA
 	
 		if touched.categoryBitMask == Catigory.goal.rawValue {
-			model.updateScore()
-			model.audio.playPing()
+			gameModel.updateScore()
+			gameModel.audio.playPing()
 		} else if touched.categoryBitMask == Catigory.track.rawValue {
-			model.lose()
-			model.audio.playPing()
+			gameModel.lose()
+			gameModel.audio.playPing()
 		}
 		
 		touchable = false

@@ -14,8 +14,4 @@ class SettingScene: ClickableScene {
         self.sceneTitle(name: "Settings")
     }
     
-    deinit {
-        print("Deinit of GameLoseScene")
-    }
-    
 }
