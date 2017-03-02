@@ -1,6 +1,1 @@
 .DS_Store
-build
-*.xcodeproj/*
-!*.xcodeproj/project.pbxproj
-!*.xcodeproj/xcshareddata
-
