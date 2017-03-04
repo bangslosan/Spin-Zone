@@ -10,10 +10,13 @@ import SpriteKit
 import GameKit
 
 class GameStartMenu: ClickableScene {
-        
+    
     override func didMove(to view: SKView) {
         self.backgroundColor = DynamicBackground.currentColor
-        self.model = MenuModel()
+        self.transitionHandler = TransitionHandler(buttons: [
+            "play": (scene: .game, direction: .left),
+            "?": (scene: .about, direction: .down)], fromScene: self)
+        
         self.sceneTitle(name: "Spin Zone", splitter: " ")
         
         addButtons()

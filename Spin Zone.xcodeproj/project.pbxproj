@@ -10,6 +10,7 @@
 		430F2D181DFC43E6003CFF01 /* BallSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430F2D171DFC43E6003CFF01 /* BallSprite.swift */; };
 		433233ED1E67B7EE00EA90EB /* SKMultiLineNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433233EC1E67B7EE00EA90EB /* SKMultiLineNode.swift */; };
 		433233EF1E67C38400EA90EB /* PauseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433233EE1E67C38400EA90EB /* PauseScene.swift */; };
+		433233F11E6A6A7600EA90EB /* PlayableClickScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433233F01E6A6A7500EA90EB /* PlayableClickScene.swift */; };
 		43431B271E6514CA001C30FC /* AudioHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43431B261E6514CA001C30FC /* AudioHelper.swift */; };
 		43472C111DABF5CD00B00FAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43472C101DABF5CD00B00FAB /* AppDelegate.swift */; };
 		43472C171DABF5CD00B00FAB /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43472C161DABF5CD00B00FAB /* GameScene.swift */; };
@@ -29,13 +30,12 @@
 		43B763BC1DE72A7D006461C1 /* ScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B763BB1DE72A7D006461C1 /* ScoreLabel.swift */; };
 		43CAEDC71E1C59E8000A6DE3 /* ClickableScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CAEDC61E1C59E8000A6DE3 /* ClickableScene.swift */; };
 		43E719771E073F7B0026E32D /* GameStartMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E719761E073F7B0026E32D /* GameStartMenu.swift */; };
-		43E7197B1E0740070026E32D /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7197A1E0740070026E32D /* MenuModel.swift */; };
+		43E7197B1E0740070026E32D /* TransitionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7197A1E0740070026E32D /* TransitionHandler.swift */; };
 		43E7197D1E088CF10026E32D /* ButtonSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7197C1E088CF10026E32D /* ButtonSprite.swift */; };
 		43E7197F1E088D660026E32D /* Defined.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7197E1E088D660026E32D /* Defined.swift */; };
 		43E9AEBA1E31A035003508FF /* AboutScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9AEB91E31A035003508FF /* AboutScene.swift */; };
 		43E9AEBC1E31A04B003508FF /* ShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9AEBB1E31A04B003508FF /* ShopModel.swift */; };
 		43E9AEBE1E31A062003508FF /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9AEBD1E31A062003508FF /* SettingModel.swift */; };
-		43E9AEC01E31A06A003508FF /* SettingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9AEBF1E31A06A003508FF /* SettingScene.swift */; };
 		43E9AEC51E344941003508FF /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E9AEC41E344941003508FF /* GameKit.framework */; };
 		43FBE8381E2483C200626BC7 /* PathTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FBE8371E2483C200626BC7 /* PathTexture.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +44,7 @@
 		430F2D171DFC43E6003CFF01 /* BallSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallSprite.swift; sourceTree = "<group>"; };
 		433233EC1E67B7EE00EA90EB /* SKMultiLineNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKMultiLineNode.swift; sourceTree = "<group>"; };
 		433233EE1E67C38400EA90EB /* PauseScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseScene.swift; sourceTree = "<group>"; };
+		433233F01E6A6A7500EA90EB /* PlayableClickScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayableClickScene.swift; sourceTree = "<group>"; };
 		43431B261E6514CA001C30FC /* AudioHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioHelper.swift; sourceTree = "<group>"; };
 		43472C0D1DABF5CD00B00FAB /* Spin Zone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spin Zone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43472C101DABF5CD00B00FAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,13 +66,12 @@
 		43B763BB1DE72A7D006461C1 /* ScoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreLabel.swift; sourceTree = "<group>"; };
 		43CAEDC61E1C59E8000A6DE3 /* ClickableScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClickableScene.swift; sourceTree = "<group>"; };
 		43E719761E073F7B0026E32D /* GameStartMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameStartMenu.swift; sourceTree = "<group>"; };
-		43E7197A1E0740070026E32D /* MenuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		43E7197A1E0740070026E32D /* TransitionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionHandler.swift; sourceTree = "<group>"; };
 		43E7197C1E088CF10026E32D /* ButtonSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonSprite.swift; sourceTree = "<group>"; };
 		43E7197E1E088D660026E32D /* Defined.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defined.swift; sourceTree = "<group>"; };
 		43E9AEB91E31A035003508FF /* AboutScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutScene.swift; sourceTree = "<group>"; };
 		43E9AEBB1E31A04B003508FF /* ShopModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopModel.swift; sourceTree = "<group>"; };
 		43E9AEBD1E31A062003508FF /* SettingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
-		43E9AEBF1E31A06A003508FF /* SettingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingScene.swift; sourceTree = "<group>"; };
 		43E9AEC41E344941003508FF /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		43FBE8371E2483C200626BC7 /* PathTexture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathTexture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +115,7 @@
 				43B763BD1DE736B1006461C1 /* scene */,
 				43B763B61DE51979006461C1 /* sprites */,
 				43472C101DABF5CD00B00FAB /* AppDelegate.swift */,
+				43E7197A1E0740070026E32D /* TransitionHandler.swift */,
 				43B763BB1DE72A7D006461C1 /* ScoreLabel.swift */,
 				43E7197E1E088D660026E32D /* Defined.swift */,
 				43FBE8371E2483C200626BC7 /* PathTexture.swift */,
@@ -126,6 +127,7 @@
 				43CAEDC61E1C59E8000A6DE3 /* ClickableScene.swift */,
 				43431B261E6514CA001C30FC /* AudioHelper.swift */,
 				433233EC1E67B7EE00EA90EB /* SKMultiLineNode.swift */,
+				433233F01E6A6A7500EA90EB /* PlayableClickScene.swift */,
 			);
 			name = "Spin Zone";
 			path = SKCircleGame;
@@ -135,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				43B763AE1DE3D195006461C1 /* GameModel.swift */,
-				43E7197A1E0740070026E32D /* MenuModel.swift */,
 				43E9AEBB1E31A04B003508FF /* ShopModel.swift */,
 				43E9AEBD1E31A062003508FF /* SettingModel.swift */,
 			);
@@ -169,7 +170,6 @@
 				43E719761E073F7B0026E32D /* GameStartMenu.swift */,
 				43479DCB1E19C19C0095917F /* GameLoseScene.swift */,
 				43E9AEB91E31A035003508FF /* AboutScene.swift */,
-				43E9AEBF1E31A06A003508FF /* SettingScene.swift */,
 				433233EE1E67C38400EA90EB /* PauseScene.swift */,
 			);
 			name = scene;
@@ -296,8 +296,7 @@
 				43472C111DABF5CD00B00FAB /* AppDelegate.swift in Sources */,
 				43E9AEBA1E31A035003508FF /* AboutScene.swift in Sources */,
 				43E9AEBE1E31A062003508FF /* SettingModel.swift in Sources */,
-				43E7197B1E0740070026E32D /* MenuModel.swift in Sources */,
-				43E9AEC01E31A06A003508FF /* SettingScene.swift in Sources */,
+				43E7197B1E0740070026E32D /* TransitionHandler.swift in Sources */,
 				43B763AF1DE3D195006461C1 /* GameModel.swift in Sources */,
 				43B763B31DE50CF0006461C1 /* ShrinkableSprite.swift in Sources */,
 				430F2D181DFC43E6003CFF01 /* BallSprite.swift in Sources */,
@@ -307,6 +306,7 @@
 				43B763B11DE3D2C2006461C1 /* GoalSprite.swift in Sources */,
 				433233EF1E67C38400EA90EB /* PauseScene.swift in Sources */,
 				433233ED1E67B7EE00EA90EB /* SKMultiLineNode.swift in Sources */,
+				433233F11E6A6A7600EA90EB /* PlayableClickScene.swift in Sources */,
 				43E9AEBC1E31A04B003508FF /* ShopModel.swift in Sources */,
 				43431B271E6514CA001C30FC /* AudioHelper.swift in Sources */,
 				43B763BC1DE72A7D006461C1 /* ScoreLabel.swift in Sources */,

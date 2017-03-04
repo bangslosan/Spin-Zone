@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class GameScene: ClickableScene, SKPhysicsContactDelegate {
+class GameScene: PlayableClickScene, SKPhysicsContactDelegate {
 
 	var gameModel: GameModel!
 	
@@ -26,7 +26,9 @@ class GameScene: ClickableScene, SKPhysicsContactDelegate {
 	}
 	
 	override func didMove(to view: SKView) {
-		self.model = MenuModel()
+		self.transitionHandler = TransitionHandler(buttons: ["||": (scene: .pause, direction: .up)], fromScene: self)
+		
+		super.gameScene = self
 		
 		self.physicsWorld.contactDelegate = self
 		
@@ -44,7 +46,7 @@ class GameScene: ClickableScene, SKPhysicsContactDelegate {
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		super.touchesBegan(touches, with: event) // for ability to press pause button
 		
-		if !allowTouchBegan {
+		if !allowTouchBegan || (super.prevSelected != nil && super.selected != nil) { // must be allowed to touch (no physics) and not already touching a pause button
 			return
 		}
 		

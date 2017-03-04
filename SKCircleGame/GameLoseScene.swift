@@ -11,7 +11,10 @@ import SpriteKit
 class GameLoseScene: ClickableScene {
     
     override func didMove(to view: SKView) {
-        self.model = MenuModel()
+        self.transitionHandler = TransitionHandler(buttons:[
+             "try again": (scene: .game, direction: .left),
+             "menu": (scene: .start, direction: .up),
+             "?": (scene: .about, direction: .down)], fromScene: self)
         self.sceneTitle(name: "Game Over", splitter: " ")
         
         addButtons()

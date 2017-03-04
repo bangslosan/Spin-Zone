@@ -11,8 +11,8 @@ import SpriteKit
 class PauseScene: ClickableScene {
     
     override func didMove(to view: SKView) {
-        self.model = MenuModel()
-        self.sceneTitle(name: "Pasued")
+        // self.model = MenuModel(buttons: ["": (scene:)])
+        self.sceneTitle(name: "Paused")
         
         self.createButtons()
     }

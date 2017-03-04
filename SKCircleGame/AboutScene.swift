@@ -11,9 +11,9 @@ import SpriteKit
 class AboutScene: ClickableScene {
     
     var buttonPosition: CGPoint!
-    
+
     override func didMove(to view: SKView) {
-        self.model = MenuModel()
+        self.transitionHandler = TransitionHandler(buttons: ["go back": (scene: .dynamic, direction: .up)], fromScene: self)
         self.sceneTitle(name: "About")
         
         self.createText()
@@ -21,7 +21,7 @@ class AboutScene: ClickableScene {
     }
     
     func createButtons() {
-        let menu = ButtonSprite(title: "Menu", under: nil, position: buttonPosition)
+        let menu = ButtonSprite(title: "Go Back", under: nil, position: buttonPosition)
         self.addChild(menu)
         self.addChild(menu.label)
     }

@@ -59,6 +59,22 @@ extension Double {
 
 extension SKScene {
     
+    func buttonFrom(touches: Set<UITouch>) -> ButtonSprite? {
+        
+        guard let touch = touches.first else {
+            return nil
+        }
+        
+        let nodes = self.nodes(at: touch.location(in: self))
+        
+        for node in nodes {
+            if let n = node as? ButtonSprite {
+                return n
+            }
+        }
+        return nil
+    }
+    
     func sceneTitle(name: String) {
         let title = SKLabelNode()
         

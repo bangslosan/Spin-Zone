@@ -1,22 +1,23 @@
 //
-//  ClickableScene.swift
-//  SKCircleGame
+//  PlayableClickScene.swift
+//  Spin Zone
 //
-//  Created by Nicholas Grana on 1/3/17.
+//  Created by Nicholas Grana on 3/3/17.
 //  Copyright © 2017 Nicholas Grana. All rights reserved.
 //
 
 import SpriteKit
 
-class ClickableScene: DynamicBackground {
-
+class PlayableClickScene: SKScene {
+    
+    var gameScene: GameScene!
+    
     var transitionHandler: TransitionHandler!
     
     var prevSelected: ButtonSprite? = nil
     var selected: ButtonSprite? = nil
     
     var touching = false
-    var makingCricle = false
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if touching {
@@ -30,9 +31,6 @@ class ClickableScene: DynamicBackground {
             }
             selected = button
             button.pressed()
-        } else {
-            super.touchesMoved(touches, with: event)
-            makingCricle = true
         }
     }
     
@@ -46,10 +44,6 @@ class ClickableScene: DynamicBackground {
                 selected?.letGo()
                 selected = nil
             }
-        }
-        
-        if makingCricle {
-            super.touchesMoved(touches, with: event)
         }
     }
     
@@ -73,7 +67,6 @@ class ClickableScene: DynamicBackground {
                 prevSelected = nil
                 selected = nil
                 touching = false
-                makingCricle = false
                 return
             }
         }
@@ -81,8 +74,7 @@ class ClickableScene: DynamicBackground {
         prevSelected = nil
         selected = nil
         touching = false
-        makingCricle = false
         super.touchesEnded(touches, with: event)
     }
-    
+
 }
