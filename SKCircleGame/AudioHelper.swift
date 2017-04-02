@@ -24,6 +24,6 @@ class AudioHelper {
     }
     
     func playPing() {
-        ping.run(SKAction.play())
+        // ping.run(SKAction.play())
     }
 }

@@ -26,7 +26,11 @@ class GameScene: PlayableClickScene, SKPhysicsContactDelegate {
 	}
 	
 	override func didMove(to view: SKView) {
-		self.transitionHandler = TransitionHandler(buttons: ["||": (scene: .pause, direction: .up)], fromScene: self)
+		if (TransitionHandler.previousScene == self) {
+			return
+		}
+		
+		self.transitionHandler = TransitionHandler(buttons: ["||": (scene: .pause, direction: .up)])
 		
 		super.gameScene = self
 		

@@ -10,15 +10,15 @@ import SpriteKit
 
 class TransitionHandler {
     
+    // stores scene for buttons like "go back"
+    static var previousScene: SKScene?
+    
     // for example, a menu button would be stored as: "menu", scene: Scene.menu, transition: SKTransition.up
     let buttons: Dictionary<String, (scene: DestinationScene, direction: SKTransitionDirection?)>
-    // stores the scene for buttons like "go back"
-    let fromScene: SKScene
     
     // since all values have same duration, just supply direction. nil means the direction is dynamic
-    init(buttons: Dictionary<String, (scene: DestinationScene, direction: SKTransitionDirection?)>, fromScene: SKScene) {
+    init(buttons: Dictionary<String, (scene: DestinationScene, direction: SKTransitionDirection?)>) {
         self.buttons = buttons
-        self.fromScene = fromScene
     }
     
     func create(scene: DestinationScene, current: SKScene) -> SKScene {
@@ -27,14 +27,18 @@ class TransitionHandler {
         switch scene {
             case .game:
                 newScene = GameScene(size: Constants.currentSize)
+                TransitionHandler.previousScene = current
             case .start:
                 newScene = GameStartMenu(size: Constants.currentSize)
+                TransitionHandler.previousScene = current
             case .about:
                 newScene = AboutScene(size: Constants.currentSize)
+                TransitionHandler.previousScene = current
             case .pause:
                 newScene = PauseScene(size: Constants.currentSize)
+                TransitionHandler.previousScene = current
             case .dynamic:
-                newScene = fromScene
+                newScene = TransitionHandler.previousScene
         }
         newScene.backgroundColor = current.backgroundColor
         // Set the scale mode to scale to fit the window

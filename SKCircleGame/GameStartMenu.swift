@@ -12,10 +12,14 @@ import GameKit
 class GameStartMenu: ClickableScene {
     
     override func didMove(to view: SKView) {
+        if (TransitionHandler.previousScene == self) {
+            return
+        }
+        
         self.backgroundColor = DynamicBackground.currentColor
         self.transitionHandler = TransitionHandler(buttons: [
             "play": (scene: .game, direction: .left),
-            "?": (scene: .about, direction: .down)], fromScene: self)
+            "?": (scene: .about, direction: .down)])
         
         self.sceneTitle(name: "Spin Zone", splitter: " ")
         

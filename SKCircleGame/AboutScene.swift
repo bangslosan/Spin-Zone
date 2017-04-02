@@ -13,7 +13,11 @@ class AboutScene: ClickableScene {
     var buttonPosition: CGPoint!
 
     override func didMove(to view: SKView) {
-        self.transitionHandler = TransitionHandler(buttons: ["go back": (scene: .dynamic, direction: .up)], fromScene: self)
+        if (TransitionHandler.previousScene == self) {
+            return
+        }
+        
+        self.transitionHandler = TransitionHandler(buttons: ["go back": (scene: .dynamic, direction: .up)])
         self.sceneTitle(name: "About")
         
         self.createText()
