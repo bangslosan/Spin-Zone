@@ -28,9 +28,9 @@ class GoalSprite: ShrinkableSprite {
 
     static func loadTextures() {
         for level in 1...6 {
-            let outerPath = UIBezierPath(arcCenter: CGPoint.zero, radius: CGFloat(((Constants.scaledRadius * CGFloat(level)) + (Constants.scaledRadius * 2 + Constants.lineWidth))), startAngle: CGFloat.radian(fromDegree: -50), endAngle: CGFloat.radian(fromDegree: 360), clockwise: false)
+            let outerPath = UIBezierPath(arcCenter: CGPoint.zero, radius: CGFloat(((Constants.scaledRadius * CGFloat(level)) + (Constants.scaledRadius * 2 + Constants.lineWidth))), startAngle: CGFloat.radian(fromDegree: Constants.angle), endAngle: CGFloat.radian(fromDegree: 360), clockwise: false)
             
-            goalPathTextures[level] = PathTexture(level: level, crop: outerPath.bounds, radius: (Constants.xScaledIncrease * CGFloat(level)) + Constants.scaledRadius, startAngle: 0, endAngle: -50, clockwise: false, color: UIColor.white)
+            goalPathTextures[level] = PathTexture(level: level, crop: outerPath.bounds, radius: (Constants.xScaledIncrease * CGFloat(level)) + Constants.scaledRadius, startAngle: 0, endAngle: Constants.angle, clockwise: false, color: UIColor.white)
         }
     }
     

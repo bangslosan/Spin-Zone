@@ -32,7 +32,7 @@ extension CGPoint {
 extension CGFloat {
     
     static func radian(fromDegree degree: Int) -> CGFloat {
-        return CGFloat((M_PI / 180)) * CGFloat(degree)
+        return CGFloat((Double.pi / 180)) * CGFloat(degree)
     }
     
 }

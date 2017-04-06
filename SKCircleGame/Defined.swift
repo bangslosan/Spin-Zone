@@ -26,9 +26,11 @@ struct Constants {
     
     static var scaledRadius = 50.xScaled
     static var xScaledIncrease = 25.xScaled
-    static var lineWidth = 10.xScaled
+    static var lineWidth = 9.xScaled // 10.xScaled
     static var ballRadius = 20.xScaled
     static var smallButtonRadius = 20.xScaled // help button & pause button background
+    
+    static var angle = -60 // arc angle for each spinning circle & track
     
     static var titleFont = 80.xScaled
     static var buttonFont = 30.xScaled

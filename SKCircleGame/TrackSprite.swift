@@ -36,18 +36,18 @@ class TrackSprite: ShrinkableSprite {
         self.removeAllActions()
         goalSprite.removeAllActions()
         
-        let random = (Double.randomNumber(from: 2, to: 4) * Double.randomNumber(from: 2, to: 4)) / Double.randomNumber(from: 2, to: 4)
-        var rotateAction = SKAction.rotate(byAngle: CGFloat(2 * M_PI), duration: random)
+        let random = (Double.randomNumber(from: 2, to: 3) * Double.randomNumber(from: 2, to: 3)) / Double.randomNumber(from: 2, to: 3)
+        var rotateAction = SKAction.rotate(byAngle: CGFloat(2 * Double.pi), duration: random)
         
         if self.model.clockwise {
-            rotateAction = SKAction.rotate(byAngle: CGFloat(-2 * M_PI), duration: random)
+            rotateAction = SKAction.rotate(byAngle: CGFloat(-2 * Double.pi), duration: random)
         }
         
         self.clockwise = self.model.clockwise
         self.model.clockwise = !self.model.clockwise
         self.time = random
         
-        action = SKAction.repeatForever( rotateAction)
+        action = SKAction.repeatForever(rotateAction)
         
         self.zRotation = CGFloat.radian(fromDegree: Int(Double.randomNumber(from: 0, to: 360)))
         self.goalSprite.zRotation = self.zRotation
@@ -62,8 +62,9 @@ class TrackSprite: ShrinkableSprite {
         if model.scoreLabel.score > 4 && GameModel.nextLevel >= 5 {
             self.model.addTopLevel()
         }
-        
-        let fadeOut = SKAction.group([SKAction.fadeOut(withDuration: 0.1625), SKAction.resize(byWidth: -150.xScaled, height: -150.xScaled, duration: 0.1625)])
+
+        let length = (((Constants.xScaledIncrease * CGFloat(level)) + Constants.scaledRadius) - Constants.xScaledIncrease) * 2
+        let fadeOut = SKAction.group([SKAction.fadeOut(withDuration: 0.1625), SKAction.resize(toWidth: length, height: length, duration: 0.1625)])
         let removeTrackFromView = SKAction.sequence([fadeOut, SKAction.run {
             self.removeFromParent()
             }])
@@ -80,7 +81,7 @@ class TrackSprite: ShrinkableSprite {
     
     static func loadTextures() {
         for level in 1...6 {
-            trackPathTextures[level] = PathTexture(level: level, radius: (Constants.xScaledIncrease * CGFloat(level)) + Constants.scaledRadius, startAngle: -50, endAngle: 360, clockwise: false, color: UIColor.white)
+            trackPathTextures[level] = PathTexture(level: level, radius: (Constants.xScaledIncrease * CGFloat(level)) + Constants.scaledRadius, startAngle: Constants.angle, endAngle: 360, clockwise: false, color: UIColor.white)
         }
     }
     

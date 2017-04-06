@@ -36,6 +36,7 @@ class ScoreLabel: SKLabelNode {
     
     let gameScene: GameScene
     
+    var firstSet = false
     var score: Int {
         set {
             self.text = String(newValue)

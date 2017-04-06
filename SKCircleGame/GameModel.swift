@@ -21,7 +21,7 @@ class GameModel {
     }
     
     static var retries: Int {
-        let fromConfig = UserDefaults.standard.integer(forKey: "retries")
+        // let fromConfig = UserDefaults.standard.integer(forKey: "retries")
         return 1
     }
     
@@ -51,9 +51,9 @@ class GameModel {
         ball.position = Constants.center
         scene.addChild(ball)
         
-        let radians = CGFloat(CGFloat.radian(fromDegree: -25) + levelOneTrack.zRotation)
+        let radians = CGFloat(CGFloat.radian(fromDegree: Constants.angle / 2) + levelOneTrack.zRotation)
         
-        let track = UIBezierPath(arcCenter: Constants.center, radius: CGFloat(Constants.xScaledIncrease + Constants.scaledRadius), startAngle: radians, endAngle: (radians + CGFloat(M_PI * 2)), clockwise: true)
+        let track = UIBezierPath(arcCenter: Constants.center, radius: CGFloat(Constants.xScaledIncrease + Constants.scaledRadius), startAngle: radians, endAngle: (radians + CGFloat(Double.pi * 2)), clockwise: true)
         ball.action = SKAction.follow(track.cgPath, asOffset: false, orientToPath: true, duration: TimeInterval(time)).reversed()
     }
     
@@ -63,10 +63,10 @@ class GameModel {
         ball.position = Constants.center
         scene.addChild(ball)
         
-        // the first angle is 50 degrees, and half of that in radians is this
-        let radians = CGFloat(CGFloat.radian(fromDegree: -25) + levelOneTrack.zRotation)
+        // half the arc angle = its center 
+        let radians = CGFloat(CGFloat.radian(fromDegree: Constants.angle / 2) + levelOneTrack.zRotation)
         
-        let track: UIBezierPath = UIBezierPath(arcCenter: Constants.center, radius: CGFloat(Constants.xScaledIncrease + Constants.scaledRadius), startAngle: radians + levelOneTrack.zRotation, endAngle:  (radians + CGFloat(M_PI * 2)), clockwise: true)
+        let track: UIBezierPath = UIBezierPath(arcCenter: Constants.center, radius: CGFloat(Constants.xScaledIncrease + Constants.scaledRadius), startAngle: radians + levelOneTrack.zRotation, endAngle:  (radians + CGFloat(Double.pi * 2)), clockwise: true)
         var action: SKAction = SKAction.follow(track.cgPath, asOffset: false, orientToPath: true, duration: TimeInterval(time))
         
         if rev {
@@ -155,11 +155,14 @@ class GameModel {
         // store the current score before next scene loads
         UserDefaults.standard.set(GameModel.nextLevel, forKey: "score")
         
+        presentNextScene()
+        
+        /*
         if (true) {
             earnRetry()
         } else {
             presentNextScene()
-        }
+        }*/
     }
     
     func presentNextScene() {

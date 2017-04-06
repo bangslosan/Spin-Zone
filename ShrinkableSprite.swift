@@ -61,7 +61,7 @@ class ShrinkableSprite: SKSpriteNode {
             }
             
             let finalLineWidth = initialLineWidth / scale
-            let animationDuration = 0.1625
+            let animationDuration = 0.1625 
             
             let scaleAction = SKAction.scale(by: scale, duration: animationDuration)
 

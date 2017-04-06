@@ -10,7 +10,7 @@ import SpriteKit
 
 class ButtonSprite: SKSpriteNode {
 
-    let defaultSize = CGSize(width: 245.xScaled, height: 50.xScaled)
+    let defaultSize = CGSize(width: 245.xScaled, height: 50.yScaled)
     
     let label: SKLabelNode
     var runOnClick: () -> () = { }
