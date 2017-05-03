@@ -20,6 +20,7 @@
 		43472C211DABF5CD00B00FAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43472C1F1DABF5CD00B00FAB /* LaunchScreen.storyboard */; };
 		43472C291DABF99300B00FAB /* junegull.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43472C281DABF99300B00FAB /* junegull.ttf */; };
 		43479DCC1E19C19C0095917F /* GameLoseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43479DCB1E19C19C0095917F /* GameLoseScene.swift */; };
+		4359F9FD1EB63BFA0064A8F0 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4359F9FC1EB63BFA0064A8F0 /* GameView.swift */; };
 		436AC0441E072D81007167D8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AC0431E072D81007167D8 /* Extensions.swift */; };
 		436AC0461E072DF0007167D8 /* DynamicBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AC0451E072DF0007167D8 /* DynamicBackground.swift */; };
 		438C03D21E664592003ADDBD /* Jump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 438C03D11E664592003ADDBD /* Jump.mp3 */; };
@@ -35,7 +36,6 @@
 		43E7197F1E088D660026E32D /* Defined.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7197E1E088D660026E32D /* Defined.swift */; };
 		43E9AEBA1E31A035003508FF /* AboutScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9AEB91E31A035003508FF /* AboutScene.swift */; };
 		43E9AEC51E344941003508FF /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E9AEC41E344941003508FF /* GameKit.framework */; };
-		43FBE8381E2483C200626BC7 /* PathTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FBE8371E2483C200626BC7 /* PathTexture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +54,7 @@
 		43472C221DABF5CD00B00FAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43472C281DABF99300B00FAB /* junegull.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = junegull.ttf; sourceTree = "<group>"; };
 		43479DCB1E19C19C0095917F /* GameLoseScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLoseScene.swift; sourceTree = "<group>"; };
+		4359F9FC1EB63BFA0064A8F0 /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		436AC0431E072D81007167D8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		436AC0451E072DF0007167D8 /* DynamicBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBackground.swift; sourceTree = "<group>"; };
 		438C03D11E664592003ADDBD /* Jump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Jump.mp3; sourceTree = "<group>"; };
@@ -69,7 +70,6 @@
 		43E7197E1E088D660026E32D /* Defined.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defined.swift; sourceTree = "<group>"; };
 		43E9AEB91E31A035003508FF /* AboutScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutScene.swift; sourceTree = "<group>"; };
 		43E9AEC41E344941003508FF /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		43FBE8371E2483C200626BC7 /* PathTexture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathTexture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +114,6 @@
 				43E7197A1E0740070026E32D /* TransitionHandler.swift */,
 				43B763BB1DE72A7D006461C1 /* ScoreLabel.swift */,
 				43E7197E1E088D660026E32D /* Defined.swift */,
-				43FBE8371E2483C200626BC7 /* PathTexture.swift */,
 				43472C1D1DABF5CD00B00FAB /* Assets.xcassets */,
 				43472C1F1DABF5CD00B00FAB /* LaunchScreen.storyboard */,
 				43472C221DABF5CD00B00FAB /* Info.plist */,
@@ -124,9 +123,18 @@
 				43431B261E6514CA001C30FC /* AudioHelper.swift */,
 				433233EC1E67B7EE00EA90EB /* SKMultiLineNode.swift */,
 				433233F01E6A6A7500EA90EB /* PlayableClickScene.swift */,
+				4359F9FE1EB63C000064A8F0 /* game */,
 			);
 			name = "Spin Zone";
 			path = SKCircleGame;
+			sourceTree = "<group>";
+		};
+		4359F9FE1EB63C000064A8F0 /* game */ = {
+			isa = PBXGroup;
+			children = (
+				4359F9FC1EB63BFA0064A8F0 /* GameView.swift */,
+			);
+			name = game;
 			sourceTree = "<group>";
 		};
 		436AC03F1E05CB39007167D8 /* model */ = {
@@ -293,7 +301,6 @@
 				43B763AF1DE3D195006461C1 /* GameModel.swift in Sources */,
 				43B763B31DE50CF0006461C1 /* ShrinkableSprite.swift in Sources */,
 				430F2D181DFC43E6003CFF01 /* BallSprite.swift in Sources */,
-				43FBE8381E2483C200626BC7 /* PathTexture.swift in Sources */,
 				436AC0461E072DF0007167D8 /* DynamicBackground.swift in Sources */,
 				43E719771E073F7B0026E32D /* GameStartMenu.swift in Sources */,
 				43B763B11DE3D2C2006461C1 /* GoalSprite.swift in Sources */,
@@ -306,6 +313,7 @@
 				43B763AD1DE3D09B006461C1 /* TrackSprite.swift in Sources */,
 				43479DCC1E19C19C0095917F /* GameLoseScene.swift in Sources */,
 				43E7197F1E088D660026E32D /* Defined.swift in Sources */,
+				4359F9FD1EB63BFA0064A8F0 /* GameView.swift in Sources */,
 				436AC0441E072D81007167D8 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

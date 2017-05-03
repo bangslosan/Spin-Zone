@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import UIKit
 
 class ButtonSprite: SKSpriteNode {
 
@@ -17,8 +18,14 @@ class ButtonSprite: SKSpriteNode {
     
     init(title: String, under: ButtonSprite?, position: CGPoint=Constants.center) {
         label = SKLabelNode(title: title, fontSize: Constants.buttonFont, fontName: "Junegull", fontColor: DynamicBackground.currentColor)
-        
+
         let shape = SKShapeNode(rect: CGRect(origin: CGPoint.zero, size: self.defaultSize), cornerRadius: (self.defaultSize.height) / 2)
+        
+        // TODO use this
+        let path = UIBezierPath().reversing()
+        let buttonPath = UIBezierPath()
+        buttonPath.addClip()
+        
         shape.strokeColor = UIColor.white
         shape.fillColor = UIColor.white
         let buttonTexture = SKView().texture(from: shape)!

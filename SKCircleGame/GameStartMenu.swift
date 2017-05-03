@@ -27,9 +27,16 @@ class GameStartMenu: ClickableScene {
     }
     
     func addButtons() {
+        let playCrop = SKCropNode()
+        
+        
         let play = ButtonSprite(title: "Play", under: nil)
         self.addChild(play)
         self.addChild(play.label)
+        
+        playCrop.maskNode = play
+        crops.append(playCrop)
+        self.addChild(playCrop)
         
         let leaderboard = ButtonSprite(title: "Leaderboard", under: play)
         leaderboard.runOnClick = {

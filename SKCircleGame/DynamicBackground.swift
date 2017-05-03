@@ -12,6 +12,8 @@ class DynamicBackground: SKScene {
    
     // MARK: Properties
     
+    var crops = [SKCropNode]()
+    
     static var theme = UIColor.grayThemeBackground
     
     static let themes = [
@@ -39,7 +41,23 @@ class DynamicBackground: SKScene {
         return DynamicBackground.themes[nextIndex]
     }
     
-    var circle: SKSpriteNode!
+    var circle: SKSpriteNode! {
+        willSet {
+            if newValue == nil {
+                for crop in crops {
+                    crop.removeFromParent()
+                }
+            }
+        }
+        
+        didSet {
+            if circle != nil {
+                for crop in crops {
+                    crop.addChild(circle)
+                }
+            }
+        }
+    }
     
     var stop = false
     var timer: Timer? = nil

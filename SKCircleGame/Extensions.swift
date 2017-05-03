@@ -143,7 +143,7 @@ extension SKLabelNode {
         self.horizontalAlignmentMode = .center
         self.verticalAlignmentMode = .center
         self.fontSize = fontSize
-        self.fontColor = fontColor
+        // self.fontColor = fontColor
     }
     
 }
