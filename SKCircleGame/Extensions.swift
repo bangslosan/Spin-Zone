@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import UIKit
 
 extension UIColor {
     
@@ -169,6 +170,34 @@ extension UIColor {
         } else {
             return self;
         }
+    }
+
+}
+
+extension SKAction {
+
+    class func shrink(by scale: CGFloat, duration: TimeInterval = 0.1625, with initialLineWidth: CGFloat = Constants.lineWidth, finish: @escaping () -> ()) -> SKAction {
+        let finalLineWidth = initialLineWidth / scale
+
+        let lineWidthAction = SKAction.customAction(withDuration: duration) { shapeNode, time in
+            if let shape = shapeNode as? SKShapeNode {
+                let progress = time / CGFloat(duration)
+                shape.lineWidth = initialLineWidth + progress * (finalLineWidth - initialLineWidth)
+            }
+        }
+
+        return SKAction.sequence([ SKAction.group([ SKAction.scale(by: scale, duration: duration), lineWidthAction ]), SKAction.run { finish() } ])
+    }
+
+    class func randomRotationAnimation(clockwise: Bool) -> (time: Double, action: SKAction, rotation: CGFloat) {
+        let random = (Double.randomNumber(from: 2, to: 3) * Double.randomNumber(from: 2, to: 3)) / Double.randomNumber(from: 2, to: 3)
+        var rotateAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(2 * Double.pi), duration: random))
+
+        if clockwise {
+            rotateAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(-2 * Double.pi), duration: random))
+        }
+
+        return  (random, rotateAction, CGFloat.radian(fromDegree: Int(Double.randomNumber(from: 0, to: 360))))
     }
 
 }

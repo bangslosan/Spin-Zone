@@ -21,11 +21,6 @@ class ButtonSprite: SKSpriteNode {
 
         let shape = SKShapeNode(rect: CGRect(origin: CGPoint.zero, size: self.defaultSize), cornerRadius: (self.defaultSize.height) / 2)
         
-        // TODO use this
-        let path = UIBezierPath().reversing()
-        let buttonPath = UIBezierPath()
-        buttonPath.addClip()
-        
         shape.strokeColor = UIColor.white
         shape.fillColor = UIColor.white
         let buttonTexture = SKView().texture(from: shape)!

@@ -40,21 +40,21 @@ class GameStartMenu: ClickableScene {
         
         let leaderboard = ButtonSprite(title: "Leaderboard", under: play)
         leaderboard.runOnClick = {
-            GameViewController.mainView.showLeaderboards()
+            SpinZoneManager.manager.showLeaderboards()
         }
         self.addChild(leaderboard)
         self.addChild(leaderboard.label)
         
         let share = ButtonSprite(title: "Share", under: leaderboard)
         share.runOnClick = {
-            GameViewController.mainView.sendScores()
+            SpinZoneManager.manager.sendScores()
         }
         self.addChild(share)
         self.addChild(share.label)
         
         let rate = ButtonSprite(title: "Rate", under: share)
         rate.runOnClick = {
-            GameViewController.mainView.link()
+            SpinZoneManager.manager.link()
         }
         self.addChild(rate)
         self.addChild(rate.label)
@@ -75,7 +75,7 @@ class SpecialScore {
         let circle = SKShapeNode(circleOfRadius: 80.xScaled)
         circle.alpha = 0.30
         circle.fillColor = UIColor.white
-        circle.strokeColor = UIColor.gray.lighterColor(percent: 20)
+        circle.strokeColor = UIColor.white.darkerColor(percent: 10)
         circle.lineWidth = 3
         circle.zPosition = 4
         return SKSpriteNode(texture: SKView().texture(from: circle))

@@ -35,14 +35,14 @@ class PauseScene: ClickableScene {
         
         let leaderboard = ButtonSprite(title: "Leaderboard", under: resume)
         leaderboard.runOnClick = {
-            GameViewController.mainView.showLeaderboards()
+            SpinZoneManager.manager.showLeaderboards()
         }
         self.addChild(leaderboard)
         self.addChild(leaderboard.label)
         
         let share = ButtonSprite(title: "Share", under: leaderboard)
         share.runOnClick = {
-            GameViewController.mainView.sendScores()
+            SpinZoneManager.manager.sendScores()
         }
         self.addChild(share)
         self.addChild(share.label)

@@ -55,8 +55,8 @@ class GameScene: PlayableClickScene, SKPhysicsContactDelegate {
 		}
 		
 		for node in gameModel.scene.children {
-			if let track = node as? TrackSprite {
-				track.shrink()
+			if let spinZoneLevel = node as? SpinZoneLevel {
+                spinZoneLevel.shrink()
 			}
 		}
 		
@@ -85,10 +85,10 @@ class GameScene: PlayableClickScene, SKPhysicsContactDelegate {
 	
 		if touched.categoryBitMask == Catigory.goal.rawValue {
 			gameModel.updateScore()
-			gameModel.audio.playPing()
+			// gameModel.audio.playPing()
 		} else if touched.categoryBitMask == Catigory.track.rawValue {
 			gameModel.lose()
-			gameModel.audio.playPing()
+			// gameModel.audio.playPing()
 		}
 		
 		touchable = false
