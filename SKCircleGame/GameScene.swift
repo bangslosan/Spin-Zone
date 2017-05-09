@@ -11,9 +11,8 @@ import SpriteKit
 class GameScene: PlayableClickScene, SKPhysicsContactDelegate {
 
 	var gameModel: GameModel!
-	
+	var gameView: GameView!
 	var scoreLabel: SKLabelNode!
-	
 	var themeColor: UIColor!
 	
 	var score: Int {
@@ -30,18 +29,17 @@ class GameScene: PlayableClickScene, SKPhysicsContactDelegate {
 			return
 		}
 		
-		self.transitionHandler = TransitionHandler(buttons: ["||": (scene: .pause, direction: .up)])
-		
-		super.gameScene = self
-		
-		self.physicsWorld.contactDelegate = self
+		transitionHandler = TransitionHandler(buttons: ["||": (scene: .pause, direction: .up)])
+		gameScene = self
+		physicsWorld.contactDelegate = self
 		
 		let level = GameModel.currentLevel
 		
-		self.gameModel = GameModel(scene: self, level: level)
-		
-		self.gameModel.createTracks()
+		gameModel = GameModel(scene: self, level: level)
+		gameView = GameView(level: level, model: gameModel)
+
 		self.addChild(ButtonSprite(bottomLeftTitle: "||"))
+
 	}
 	
 	// used to block touches while the physics is being applied
@@ -66,11 +64,11 @@ class GameScene: PlayableClickScene, SKPhysicsContactDelegate {
 		
 		DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: {
 			self.touchable = true
-			self.gameModel.applyTrackPhysics()
+			self.gameView.applyBarrierPhysics()
 			self.allowTouchBegan = true
 		})
 		DispatchQueue.main.asyncAfter(deadline: .now() + seconds + 0.05, execute: {
-			self.gameModel.applyGoalPhysics()
+			self.gameView.applyGatePhysics()
 		})
 	}
 	

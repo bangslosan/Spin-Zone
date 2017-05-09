@@ -23,6 +23,7 @@ class GameLoseScene: ClickableScene {
         
         addButtons()
         self.addChild(ButtonSprite(bottomLeftTitle: "?"))
+        addFloatingParticles()
     }
     
     func addButtons() {

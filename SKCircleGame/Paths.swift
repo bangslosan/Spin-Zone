@@ -1,8 +1,11 @@
 //
-// Created by Nicholas Grana on 5/3/17.
-// Copyright (c) 2017 Nicholas Grana. All rights reserved.
 //
-
+//  Paths.swift
+//  Spin Zone
+//
+//  Created by Nicholas Grana on 5/3/17.
+//  Copyright © 2017 Nicholas Grana. All rights reserved.
+//
 import SpriteKit
 
 /*

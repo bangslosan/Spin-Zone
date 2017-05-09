@@ -19,8 +19,7 @@ class ButtonSprite: SKSpriteNode {
     init(title: String, under: ButtonSprite?, position: CGPoint=Constants.center) {
         label = SKLabelNode(title: title, fontSize: Constants.buttonFont, fontName: "Junegull", fontColor: DynamicBackground.currentColor)
 
-        let shape = SKShapeNode(rect: CGRect(origin: CGPoint.zero, size: self.defaultSize), cornerRadius: (self.defaultSize.height) / 2)
-        
+        let shape = SKShapeNode(rect: CGRect(origin: CGPoint.zero, size: self.defaultSize), cornerRadius: (self.defaultSize.height - 1) / 2)
         shape.strokeColor = UIColor.white
         shape.fillColor = UIColor.white
         let buttonTexture = SKView().texture(from: shape)!

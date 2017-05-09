@@ -7,36 +7,59 @@
 //
 
 import SpriteKit
+import CoreGraphics
 
 class BallSprite: SKSpriteNode {
-    
-    var action: SKAction! = nil {
-        didSet {
-            if let _ = action {
-                self.removeAllActions()
-                self.run(SKAction.repeatForever(action))
-            }
-        }
-    }
-    
-    init(color: UIColor, view: SKView) {
+
+    init(color: UIColor, on zoneLevel: SpinZoneLevel) {
         let spriteShape = SKShapeNode(circleOfRadius: Constants.ballRadius)
         spriteShape.fillColor = color
         spriteShape.strokeColor = color
-        
-        let texture = view.texture(from: spriteShape)
+        let texture = SKView().texture(from: spriteShape)
         
         super.init(texture: texture, color: color, size: CGSize(width: Constants.ballRadius, height: Constants.ballRadius))
-        
         self.size = CGSize(width: Constants.ballRadius, height: Constants.ballRadius)
-        let physics = SKPhysicsBody(circleOfRadius: (Constants.ballRadius - 2.xScaled) / 2)
-        physics.affectedByGravity = false
-        physics.collisionBitMask = 0
-        physics.categoryBitMask = Catigory.ball.rawValue
-        physics.contactTestBitMask = Contact.track.rawValue | Contact.goal.rawValue
-        self.physicsBody = physics
+
+        setup(on: zoneLevel)
     }
-    
+
+    func setup(on zoneLevel: SpinZoneLevel) {
+        func setupPhysics() {
+            let physics = SKPhysicsBody(circleOfRadius: (Constants.ballRadius - 2.xScaled) / 2)
+            physics.affectedByGravity = false
+            physics.collisionBitMask = 0
+            physics.categoryBitMask = Catigory.ball.rawValue
+            physics.contactTestBitMask = Contact.track.rawValue | Contact.goal.rawValue
+            self.physicsBody = physics
+        }
+        func setupBall() {
+            run(followAction(on: zoneLevel, rad: CGFloat(CGFloat.radian(fromDegree: Constants.angle / 2) + zoneLevel.zRotation)))
+        }
+
+        setupPhysics()
+        setupBall()
+    }
+
+    func update(on zoneLevel: SpinZoneLevel) {
+        run(SKAction.repeatForever(followAction(on: zoneLevel, rad: atan2(position.y - Constants.center.y, position.x - Constants.center.x))))
+    }
+
+    func followAction(on zoneLevel: SpinZoneLevel, rad: CGFloat) -> SKAction {
+        let path = UIBezierPath(arcCenter: Constants.center, radius: CGFloat(Constants.xScaledIncrease + Constants.scaledRadius), startAngle: rad, endAngle: CGFloat.radian(fromDegree: 360) + rad, clockwise: true)
+        var action = SKAction.follow(path.cgPath, asOffset: false, orientToPath: true, duration: zoneLevel.time)
+        if zoneLevel.clockwise {
+            action = action.reversed()
+        }
+
+        return SKAction.repeatForever(action)
+    }
+
+    override func run(_ action: SKAction) {
+        removeAllActions()
+        super.run(action)
+    }
+
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -23,6 +23,7 @@ class PauseScene: ClickableScene {
         self.sceneTitle(name: "Paused")
         
         self.createButtons()
+        addFloatingParticles()
     }
     
     func createButtons() {

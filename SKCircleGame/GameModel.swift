@@ -26,28 +26,10 @@ class GameModel {
     }
     
     var clockwise = true
-
-    var ball: BallSprite! = nil
-
     lazy var scoreLabel: ScoreLabel = ScoreLabel(scene: self.scene)
-
-    var levelOne: SpinZoneLevel! {
-        for node in self.scene.children {
-            if let zone = node as? SpinZoneLevel {
-                if zone.level == 1 {
-                    return zone
-                }
-            }
-        }
-        return nil
-    }
-
-    let gameView: GameView
-
     let scene: GameScene!
     
     init(scene: GameScene, level: Int) {
-        selg.gameView = GameView(level: level)
         self.scene = scene
         self.scoreLabel.score = level
     }

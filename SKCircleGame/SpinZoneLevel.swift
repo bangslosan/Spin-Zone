@@ -1,19 +1,16 @@
 //
-// Created by Nicholas Grana on 5/3/17.
-// Copyright (c) 2017 Nicholas Grana. All rights reserved.
+//  SpinZoneLevel.swift
+//  Spin Zone
+//
+//  Created by Nicholas Grana on 5/3/17.
+//  Copyright © 2017 Nicholas Grana. All rights reserved.
 //
 
 import SpriteKit
 
 class SpinZoneLevel: SKNode {
 
-    var level: Int {
-        didSet {
-            if level == 1 {
-                gameModel.updateBall()
-            }
-        }
-    }
+    var level: Int
     let gameModel: GameModel
     var barrierSprite: BarrierSprite!
     var gateSprite: GateSprite!
@@ -70,6 +67,11 @@ class SpinZoneLevel: SKNode {
     func shrink() {
         level -= 1
 
+        // update the ball to the correct animation direction as it follows
+        if level == 1 {
+            gameModel.scene.gameView.ball.update(on: self)
+        }
+
         if level <= 0 {
             fadeOut()
         } else {
@@ -83,15 +85,17 @@ class SpinZoneLevel: SKNode {
         if gameModel.scoreLabel.score > 4 && GameModel.nextLevel >= 5 {
             gameModel.addTopLevel()
         }
+        self.frame.width - Constants.xScaledIncrease
+        let length = self.frame.width - Constants.xScaledIncrease
+        let fadeOut = SKAction.group([SKAction.fadeOut(withDuration: 0.1625), SKAction.resize(toWidth: 0, height: 0, duration: 0.1625)])
 
-        let length = (((Constants.xScaledIncrease * CGFloat(level)) + Constants.scaledRadius) - Constants.xScaledIncrease) * 2
-        let fadeOut = SKAction.group([SKAction.fadeOut(withDuration: 0.1625), SKAction.resize(toWidth: length, height: length, duration: 0.1625)])
-        let remove = SKAction.run {
+        self.barrierSprite.run(SKAction.sequence([fadeOut, SKAction.run {
+            self.barrierSprite.removeFromParent()
+        }]))
+        self.gateSprite.run(SKAction.sequence([fadeOut, SKAction.run {
+            self.gateSprite.removeFromParent()
             self.removeFromParent()
-        }
-
-        self.run(SKAction.sequence([fadeOut, remove]))
-
+        }]))
     }
 
     func animate() {
@@ -121,7 +125,7 @@ class GateSprite: SKSpriteNode {
         self.zoneLevel = zoneLevel
         self.gate = SpinZoneManager.manager.gates[zoneLevel.level]!
 
-        super.init(texture: gate.texture, color: UIColor.white, size: gate.texture.size())
+        super.init(texture: gate.texture, color: UIColor.clear, size: gate.texture.size())
     }
 
     func shrink() {
@@ -134,17 +138,14 @@ class GateSprite: SKSpriteNode {
         let scale = smallArc.texture.size().height / bigArc.texture.size().height
         let shape = bigArc.shape.copy() as! SKShapeNode
 
-        shape.alpha = 0.15 // TODO: is this needed?
+        shape.alpha = 0.15
 
         texture = nil
         shape.zRotation = self.zRotation
-        shape.position = self.position
 
-        shape.run(zoneLevel.action)
-        zoneLevel.gameModel.scene.addChild(shape)
+        self.addChild(shape)
 
         run(SKAction.shrink(by: scale) {
-            self.removeFromParent()
             shape.removeFromParent()
         })
     }
@@ -165,7 +166,7 @@ class BarrierSprite: SKSpriteNode {
         self.zoneLevel = zoneLevel
         self.barrier = SpinZoneManager.manager.barriers[zoneLevel.level]!
 
-        super.init(texture: barrier.texture, color: UIColor.white, size: barrier.texture.size())
+        super.init(texture: barrier.texture, color: UIColor.clear, size: barrier.texture.size())
     }
 
     func shrink() {
@@ -180,17 +181,11 @@ class BarrierSprite: SKSpriteNode {
 
         texture = nil
         shape.zRotation = self.zRotation
-        shape.position = self.position
-
-        shape.run(zoneLevel.action)
-
-        zoneLevel.gameModel.scene.addChild(shape)
+        self.addChild(shape)
 
         run(SKAction.shrink(by: scale) {
-            self.removeFromParent()
             shape.removeFromParent()
-
-            SpinZoneLevel(from: self.zoneLevel)
+            let level = SpinZoneLevel(from: self.zoneLevel)
         })
     }
 

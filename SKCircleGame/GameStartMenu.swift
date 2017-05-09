@@ -24,6 +24,7 @@ class GameStartMenu: ClickableScene {
         self.sceneTitle(name: "Spin Zone", splitter: " ")
         
         addButtons()
+        addFloatingParticles()
     }
     
     func addButtons() {

@@ -144,7 +144,7 @@ extension SKLabelNode {
         self.horizontalAlignmentMode = .center
         self.verticalAlignmentMode = .center
         self.fontSize = fontSize
-        // self.fontColor = fontColor
+        self.fontColor = fontColor
     }
     
 }
@@ -198,6 +198,36 @@ extension SKAction {
         }
 
         return  (random, rotateAction, CGFloat.radian(fromDegree: Int(Double.randomNumber(from: 0, to: 360))))
+    }
+
+}
+
+extension SKScene {
+
+    func addFloatingParticles() {
+        let circle = SKShapeNode(circleOfRadius: 20)
+        circle.strokeColor = UIColor.clear
+        circle.fillColor = UIColor.white
+        let circleTexture = SKView().texture(from: circle)
+
+        let emitter = SKEmitterNode()
+        emitter.particleTexture = circleTexture
+        emitter.position = CGPoint(x: self.frame.midX, y: -10)
+        emitter.particlePositionRange = CGVector(dx: self.frame.width, dy: 0)
+        emitter.particleBirthRate = 10
+        emitter.particleLifetime = 10.0
+        emitter.particleLifetimeRange = 2.5
+        emitter.particleSpeed = 150.0
+        emitter.particleSpeedRange = 100.0
+        emitter.particleSize = CGSize(width: 10.0, height: 10.0)
+        emitter.emissionAngleRange = CGFloat.pi / 2
+        emitter.particleAlphaRange = 0.6
+        emitter.particleAlpha = 0.4
+        emitter.particleScale = 1.5
+        emitter.particleScaleRange = 1.5
+        emitter.xAcceleration = 5.0
+        emitter.yAcceleration = 7.0
+        self.addChild(emitter)
     }
 
 }

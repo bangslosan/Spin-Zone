@@ -22,6 +22,7 @@ class AboutScene: ClickableScene {
         
         self.createText()
         self.createButtons()
+        addFloatingParticles()
     }
     
     func createButtons() {
