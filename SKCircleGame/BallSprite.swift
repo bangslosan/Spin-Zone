@@ -11,15 +11,16 @@ import CoreGraphics
 
 class BallSprite: SKSpriteNode {
 
-    init(color: UIColor, on zoneLevel: SpinZoneLevel) {
+    init(on zoneLevel: SpinZoneLevel) {
         let spriteShape = SKShapeNode(circleOfRadius: Constants.ballRadius)
-        spriteShape.fillColor = color
-        spriteShape.strokeColor = color
+        spriteShape.fillColor = UIColor.white
+        spriteShape.strokeColor = UIColor.white
         let texture = SKView().texture(from: spriteShape)
         
-        super.init(texture: texture, color: color, size: CGSize(width: Constants.ballRadius, height: Constants.ballRadius))
+        super.init(texture: texture, color: UIColor.white, size: CGSize(width: Constants.ballRadius, height: Constants.ballRadius))
         self.size = CGSize(width: Constants.ballRadius, height: Constants.ballRadius)
 
+        self.color = SpinZoneManager.manager.nextColor
         setup(on: zoneLevel)
     }
 
@@ -34,6 +35,8 @@ class BallSprite: SKSpriteNode {
         }
         func setupBall() {
             run(followAction(on: zoneLevel, rad: CGFloat(CGFloat.radian(fromDegree: Constants.angle / 2) + zoneLevel.zRotation)))
+
+            zoneLevel.gameModel.scene.dynamicAnimate(sprite: self, startingFromIndex: SpinZoneManager.manager.ballNextIndex)
         }
 
         setupPhysics()
@@ -53,12 +56,6 @@ class BallSprite: SKSpriteNode {
 
         return SKAction.repeatForever(action)
     }
-
-    override func run(_ action: SKAction) {
-        removeAllActions()
-        super.run(action)
-    }
-
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

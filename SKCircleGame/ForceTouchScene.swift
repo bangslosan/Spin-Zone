@@ -1,5 +1,5 @@
 //
-//  DynamicBackground.swift
+//  ForceTouchScene.swift
 //  SKCircleGame
 //
 //  Created by Nicholas Grana on 12/18/16.
@@ -8,39 +8,12 @@
 
 import SpriteKit
 
-class DynamicBackground: SKScene {
+class ForceTouchScene: SKScene {
    
     // MARK: Properties
-    
+
     var crops = [SKCropNode]()
-    
-    static var theme = UIColor.grayThemeBackground
-    
-    static let themes = [
-        UIColor.grayThemeBackground,
-        UIColor.redThemeBackground,
-        UIColor.orangeThemeBackground,
-        UIColor.yellowThemeBackground,
-        UIColor.greenThemeBackground,
-        UIColor.blueThemeBackground,
-        UIColor.purpleThemeBackground,
-        UIColor.pinkThemeBackground
-    ]
 
-    static var currentIndex: Int {
-        return UserDefaults.standard.integer(forKey: "color-index")
-    }
-
-    static var currentColor: UIColor {
-        DynamicBackground.theme = themes[currentIndex]
-        return DynamicBackground.themes[currentIndex]
-    }
-    
-    static var nextColor: UIColor {
-        let nextIndex = DynamicBackground.currentIndex + 1 > DynamicBackground.themes.count - 1 ? 0 : DynamicBackground.currentIndex + 1
-        return DynamicBackground.themes[nextIndex]
-    }
-    
     var circle: SKSpriteNode! {
         willSet {
             if newValue == nil {
@@ -49,7 +22,7 @@ class DynamicBackground: SKScene {
                 }
             }
         }
-        
+
         didSet {
             if circle != nil {
                 for crop in crops {
@@ -87,15 +60,15 @@ class DynamicBackground: SKScene {
     override func sceneDidLoad() {
         super.sceneDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(DynamicBackground.removeCircle), name: NSNotification.Name(rawValue: "RemoveCircle"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ForceTouchScene.removeCircle), name: NSNotification.Name(rawValue: "RemoveCircle"), object: nil)
     }
     
     // MARK: Circle Functions
     
     func createCircle() -> SKSpriteNode {
         let circle = SKShapeNode(circleOfRadius: self.size.height)
-        circle.strokeColor = DynamicBackground.nextColor
-        circle.fillColor = DynamicBackground.nextColor
+        circle.strokeColor = SpinZoneManager.manager.nextColor
+        circle.fillColor = SpinZoneManager.manager.nextColor
         let sprite = SKSpriteNode(texture: SKView().texture(from: circle)!)
         sprite.zPosition = -1
         sprite.size = CGSize.zero
@@ -105,9 +78,8 @@ class DynamicBackground: SKScene {
     func transitionBackground() {
         stop = true
         
-        self.backgroundColor = DynamicBackground.nextColor
-        
-        UserDefaults.standard.set(DynamicBackground.currentIndex + 1 > DynamicBackground.themes.count - 1 ? 0 : DynamicBackground.currentIndex + 1, forKey: "color-index")
+        self.backgroundColor = SpinZoneManager.manager.nextColor
+        SpinZoneManager.manager.currentIndex += 1
 
         removeCircle()
         self.circle = self.createCircle()
@@ -116,7 +88,7 @@ class DynamicBackground: SKScene {
         for node in self.children {
             if let label = node as? SKLabelNode {
                 if label.alpha == 1.0 { // only buttons have an alpha of 1.0
-                    label.fontColor = DynamicBackground.currentColor
+                    label.fontColor = SpinZoneManager.manager.currentColor
                 }
             }
         }

@@ -39,7 +39,7 @@ public class GameView: SKView {
 
     func setup() {
         func setupBall() {
-            ball = BallSprite(color: DynamicBackground.nextColor, on: levelOne)
+            ball = BallSprite(on: levelOne)
             ball.zPosition = 2
             ball.position = Constants.center
             gameModel.scene.addChild(ball)

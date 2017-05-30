@@ -96,7 +96,7 @@ class GameModel {
         let transition = SKTransition.push(with: .down, duration: 0.5)
         transition.pausesOutgoingScene = false
         transition.pausesIncomingScene = false
-        
+
         let nextScene = GameLoseScene(size: Constants.currentSize)
         nextScene.backgroundColor = self.scene.backgroundColor
         self.scene.view?.presentScene(nextScene, transition: transition)

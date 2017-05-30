@@ -24,8 +24,8 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         manager.authPlayer()
         manager.mainView = self
         Constants.currentSize = self.view.frame.size
-        
-        if let newView = self.view as! SKView? {
+
+        if let newView = view as? SKView {
             gameStartMenu = GameStartMenu(size: Constants.currentSize)
 
             manager.loadBarriers()

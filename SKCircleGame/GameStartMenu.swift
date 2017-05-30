@@ -16,7 +16,7 @@ class GameStartMenu: ClickableScene {
             return
         }
         
-        self.backgroundColor = DynamicBackground.currentColor
+        self.backgroundColor = SpinZoneManager.manager.currentColor
         self.transitionHandler = TransitionHandler(buttons: [
             "play": (scene: .game, direction: .left),
             "?": (scene: .about, direction: .down)])

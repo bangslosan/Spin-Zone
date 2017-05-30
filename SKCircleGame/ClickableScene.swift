@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class ClickableScene: DynamicBackground {
+class ClickableScene: ForceTouchScene {
 
     var transitionHandler: TransitionHandler!
     
@@ -62,10 +62,9 @@ class ClickableScene: DynamicBackground {
                 let button = transitionHandler.buttons[name]
                 if let button = button {
                     let newScene = transitionHandler.create(scene: button.scene, current: self)
-                    
                     let transition = SKTransition.push(with: button.direction!, duration: 0.5)
                     transition.pausesIncomingScene = true
-                    self.view?.presentScene(newScene, transition: transition)
+                    self.view!.presentScene(newScene, transition: transition)
                     // return to pretend creating / editing of superclass's circle creation
                     return
                 }
