@@ -16,7 +16,6 @@ class PlayableClickScene: SKScene {
     
     var prevSelected: ButtonSprite? = nil
     var selected: ButtonSprite? = nil
-    
     var touching = false
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

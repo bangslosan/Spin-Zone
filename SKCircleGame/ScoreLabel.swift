@@ -12,7 +12,7 @@ class ScoreLabel: SKLabelNode {
     
     lazy var levelText: SKLabelNode = {
         let label = SKLabelNode(title: "Level", fontSize: 40.0)
-        label.alpha = 0.90
+        label.alpha = 0.9
         label.position = CGPoint(x: Constants.center.x, y: 40.yScaled * 2)
         return label
     }()

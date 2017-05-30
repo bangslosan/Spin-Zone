@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import UIKit
 
 extension UIColor {
     
@@ -169,6 +170,64 @@ extension UIColor {
         } else {
             return self;
         }
+    }
+
+}
+
+extension SKAction {
+
+    class func shrink(by scale: CGFloat, duration: TimeInterval = 0.1625, with initialLineWidth: CGFloat = Constants.lineWidth, finish: @escaping () -> ()) -> SKAction {
+        let finalLineWidth = initialLineWidth / scale
+
+        let lineWidthAction = SKAction.customAction(withDuration: duration) { shapeNode, time in
+            if let shape = shapeNode as? SKShapeNode {
+                let progress = time / CGFloat(duration)
+                shape.lineWidth = initialLineWidth + progress * (finalLineWidth - initialLineWidth)
+            }
+        }
+
+        return SKAction.sequence([ SKAction.group([ SKAction.scale(by: scale, duration: duration), lineWidthAction ]), SKAction.run { finish() } ])
+    }
+
+    class func randomRotationAnimation(clockwise: Bool) -> (time: Double, action: SKAction, rotation: CGFloat) {
+        let random = (Double.randomNumber(from: 2, to: 3) * Double.randomNumber(from: 2, to: 3)) / Double.randomNumber(from: 2, to: 3)
+        var rotateAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(2 * Double.pi), duration: random))
+
+        if clockwise {
+            rotateAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(-2 * Double.pi), duration: random))
+        }
+
+        return  (random, rotateAction, CGFloat.radian(fromDegree: Int(Double.randomNumber(from: 0, to: 360))))
+    }
+
+}
+
+extension SKScene {
+
+    func addFloatingParticles() {
+        let circle = SKShapeNode(circleOfRadius: 20)
+        circle.strokeColor = UIColor.clear
+        circle.fillColor = UIColor.white
+        let circleTexture = SKView().texture(from: circle)
+
+        let emitter = SKEmitterNode()
+        emitter.particleTexture = circleTexture
+        emitter.position = CGPoint(x: self.frame.midX, y: -10)
+        emitter.particlePositionRange = CGVector(dx: self.frame.width, dy: 0)
+        emitter.particleBirthRate = 10
+        emitter.particleLifetime = 10.0
+        emitter.particleLifetimeRange = 2.5
+        emitter.particleSpeed = 150.0
+        emitter.particleSpeedRange = 100.0
+        emitter.particleSize = CGSize(width: 10.0, height: 10.0)
+        emitter.emissionAngleRange = CGFloat.pi / 2
+        emitter.particleAlphaRange = 0.6
+        emitter.particleAlpha = 0.4
+        emitter.particleScale = 1.5
+        emitter.particleScaleRange = 1.5
+        emitter.xAcceleration = 5.0
+        emitter.yAcceleration = 7.0
+        self.addChild(emitter)
     }
 
 }

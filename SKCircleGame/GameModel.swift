@@ -26,117 +26,19 @@ class GameModel {
     }
     
     var clockwise = true
-
-    var ball: BallSprite! = nil
-
     lazy var scoreLabel: ScoreLabel = ScoreLabel(scene: self.scene)
-    
-    var levelOneTrack: TrackSprite!
-    var levelOneGoal: GoalSprite!
-    
     let scene: GameScene!
-    
-    lazy var audio: AudioHelper = {
-        return AudioHelper(scene: self.scene!)
-    }()
     
     init(scene: GameScene, level: Int) {
         self.scene = scene
         self.scoreLabel.score = level
     }
-    
-    func createBall(time: Double) {
-        ball = BallSprite(color: DynamicBackground.nextColor, view: scene.view!)
-        ball.zPosition = 2
-        ball.position = Constants.center
-        scene.addChild(ball)
-        
-        let radians = CGFloat(CGFloat.radian(fromDegree: Constants.angle / 2) + levelOneTrack.zRotation)
-        
-        let track = UIBezierPath(arcCenter: Constants.center, radius: CGFloat(Constants.xScaledIncrease + Constants.scaledRadius), startAngle: radians, endAngle: (radians + CGFloat(Double.pi * 2)), clockwise: true)
-        ball.action = SKAction.follow(track.cgPath, asOffset: false, orientToPath: true, duration: TimeInterval(time)).reversed()
-    }
-    
-    func createBall(time: Double, rev: Bool) {
-        ball = BallSprite(color: DynamicBackground.nextColor, view: scene.view!)
-        ball.zPosition = 2
-        ball.position = Constants.center
-        scene.addChild(ball)
-        
-        // half the arc angle = its center 
-        let radians = CGFloat(CGFloat.radian(fromDegree: Constants.angle / 2) + levelOneTrack.zRotation)
-        
-        let track: UIBezierPath = UIBezierPath(arcCenter: Constants.center, radius: CGFloat(Constants.xScaledIncrease + Constants.scaledRadius), startAngle: radians + levelOneTrack.zRotation, endAngle:  (radians + CGFloat(Double.pi * 2)), clockwise: true)
-        var action: SKAction = SKAction.follow(track.cgPath, asOffset: false, orientToPath: true, duration: TimeInterval(time))
-        
-        if rev {
-            action = action.reversed()
-        }
-
-        ball.action = action
-    }
-    
-    func updateBall() {
-        let dx = ball.position.x - Constants.center.x
-        let dy = ball.position.y - Constants.center.y
-        
-        let rad = atan2(dy, dx)
-        
-        let path = UIBezierPath(arcCenter: Constants.center, radius: CGFloat(Constants.xScaledIncrease + Constants.scaledRadius), startAngle: rad, endAngle: CGFloat.radian(fromDegree: 360) + rad, clockwise: true)
-        
-        var action = SKAction.follow(path.cgPath, asOffset: false, orientToPath: true, duration: TimeInterval(levelOneTrack.time))
-        
-        if levelOneTrack.clockwise! {
-            action = action.reversed()
-        }
-        
-        ball.action = action
-    }
-    
-    func createTracks() {
-        for level in 1...(self.scoreLabel.score + 1 > 5 ? 5 : self.scoreLabel.score + 1) {
-            
-            let goal = GoalSprite(level: level, model: self)
-            let track = TrackSprite(level: level, model: self, goalSprite: goal)
-            
-            self.scene.addChild(goal)
-            self.scene.addChild(track)
-            
-            if level == 1 {
-                self.levelOneTrack = track
-                self.levelOneGoal = goal
-                self.createBall(time: track.time)
-            }
-            
-        }
-    }
-    
-    func applyTrackPhysics() {
-        let trackPhysics = SKPhysicsBody(edgeChainFrom: TrackSprite.trackPathTextures[1]!.normalPath.cgPath)
-        trackPhysics.affectedByGravity = false
-        trackPhysics.collisionBitMask = 0
-        trackPhysics.categoryBitMask = Catigory.track.rawValue
-        trackPhysics.contactTestBitMask = Contact.ball.rawValue
-        levelOneTrack.physicsBody = trackPhysics
-    }
-    
-    func applyGoalPhysics() {
-        let goalPhysics = SKPhysicsBody(edgeChainFrom: GoalSprite.goalPathTextures[1]!.normalPath.cgPath)
-        goalPhysics.affectedByGravity = false
-        goalPhysics.collisionBitMask = 0
-        goalPhysics.categoryBitMask = Catigory.goal.rawValue
-        goalPhysics.contactTestBitMask = Contact.ball.rawValue
-        levelOneGoal.physicsBody = goalPhysics
-    }
 
     func addTopLevel() {
-        let goal = GoalSprite(level: 6, model: self)
-        let track = TrackSprite(level: 6, model: self, goalSprite: goal)
-        
-        scene.addChild(goal)
-        scene.addChild(track)
-        
-        track.shrink()
+        let spinZoneLevel = SpinZoneLevel(level: 6, model: self)
+        scene.addChild(spinZoneLevel)
+
+        spinZoneLevel.shrink()
     }
     
     func updateScore() {
@@ -194,7 +96,7 @@ class GameModel {
         let transition = SKTransition.push(with: .down, duration: 0.5)
         transition.pausesOutgoingScene = false
         transition.pausesIncomingScene = false
-        
+
         let nextScene = GameLoseScene(size: Constants.currentSize)
         nextScene.backgroundColor = self.scene.backgroundColor
         self.scene.view?.presentScene(nextScene, transition: transition)

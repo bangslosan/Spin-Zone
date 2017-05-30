@@ -16,7 +16,7 @@ class GameStartMenu: ClickableScene {
             return
         }
         
-        self.backgroundColor = DynamicBackground.currentColor
+        self.backgroundColor = SpinZoneManager.manager.currentColor
         self.transitionHandler = TransitionHandler(buttons: [
             "play": (scene: .game, direction: .left),
             "?": (scene: .about, direction: .down)])
@@ -24,30 +24,38 @@ class GameStartMenu: ClickableScene {
         self.sceneTitle(name: "Spin Zone", splitter: " ")
         
         addButtons()
+        addFloatingParticles()
     }
     
     func addButtons() {
+        let playCrop = SKCropNode()
+        
+        
         let play = ButtonSprite(title: "Play", under: nil)
         self.addChild(play)
         self.addChild(play.label)
         
+        playCrop.maskNode = play
+        crops.append(playCrop)
+        self.addChild(playCrop)
+        
         let leaderboard = ButtonSprite(title: "Leaderboard", under: play)
         leaderboard.runOnClick = {
-            GameViewController.mainView.showLeaderboards()
+            SpinZoneManager.manager.showLeaderboards()
         }
         self.addChild(leaderboard)
         self.addChild(leaderboard.label)
         
         let share = ButtonSprite(title: "Share", under: leaderboard)
         share.runOnClick = {
-            GameViewController.mainView.sendScores()
+            SpinZoneManager.manager.sendScores()
         }
         self.addChild(share)
         self.addChild(share.label)
         
         let rate = ButtonSprite(title: "Rate", under: share)
         rate.runOnClick = {
-            GameViewController.mainView.link()
+            SpinZoneManager.manager.link()
         }
         self.addChild(rate)
         self.addChild(rate.label)
@@ -68,7 +76,7 @@ class SpecialScore {
         let circle = SKShapeNode(circleOfRadius: 80.xScaled)
         circle.alpha = 0.30
         circle.fillColor = UIColor.white
-        circle.strokeColor = UIColor.gray.lighterColor(percent: 20)
+        circle.strokeColor = UIColor.white.darkerColor(percent: 10)
         circle.lineWidth = 3
         circle.zPosition = 4
         return SKSpriteNode(texture: SKView().texture(from: circle))
