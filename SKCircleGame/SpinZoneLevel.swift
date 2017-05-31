@@ -85,8 +85,6 @@ class SpinZoneLevel: SKNode {
         if gameModel.scoreLabel.score > 4 && GameModel.nextLevel >= 5 {
             gameModel.addTopLevel()
         }
-        self.frame.width - Constants.xScaledIncrease
-        let length = self.frame.width - Constants.xScaledIncrease
         let fadeOut = SKAction.group([SKAction.fadeOut(withDuration: 0.1625), SKAction.resize(toWidth: 0, height: 0, duration: 0.1625)])
 
         self.barrierSprite.run(SKAction.sequence([fadeOut, SKAction.run {
@@ -185,7 +183,7 @@ class BarrierSprite: SKSpriteNode {
 
         run(SKAction.shrink(by: scale) {
             shape.removeFromParent()
-            let level = SpinZoneLevel(from: self.zoneLevel)
+            SpinZoneLevel(from: self.zoneLevel)
         })
     }
 

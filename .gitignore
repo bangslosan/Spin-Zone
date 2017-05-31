@@ -1,2 +1,7 @@
 .DS_Store
 xcuserdata
+# IntelliJ IDEA Stuff
+/.idea
+Paintball.iml
+*.iml
+*.eml

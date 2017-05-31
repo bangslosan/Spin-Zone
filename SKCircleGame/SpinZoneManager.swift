@@ -37,7 +37,6 @@ class SpinZoneManager {
         set {
             let v = newValue
             UserDefaults.standard.set(v + 1 > themes.count - 1 ? 0 : v + 1, forKey: "color-index")
-            currentIndex = v
         }
 
     }

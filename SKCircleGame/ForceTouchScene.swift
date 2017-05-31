@@ -12,25 +12,7 @@ class ForceTouchScene: SKScene {
    
     // MARK: Properties
 
-    var crops = [SKCropNode]()
-
-    var circle: SKSpriteNode! {
-        willSet {
-            if newValue == nil {
-                for crop in crops {
-                    crop.removeFromParent()
-                }
-            }
-        }
-
-        didSet {
-            if circle != nil {
-                for crop in crops {
-                    crop.addChild(circle)
-                }
-            }
-        }
-    }
+    var circle: SKSpriteNode!
     
     var stop = false
     var timer: Timer? = nil
@@ -38,7 +20,7 @@ class ForceTouchScene: SKScene {
     var currentTouchPosition = CGPoint.zero
     
     var maxSize: CGFloat {
-        return max(max(Constants.topLeft.distance(between: circle.position), Constants.topRight.distance(between: circle.position)), max(Constants.bottomLeft.distance(between: circle.position), Constants.bottomRight.distance(between: circle.position)))
+        return max(max(Constants.topLeft.distance(between: circle.position), Constants.topRight.distance(between: circle.position)), max(Constants.bottomLeft.distance(between: circle.position), Constants.bottomRight.distance(between: circle.position))) + 5
     }
     
     // from 0.0 to 1.0 for time & 3D touch to work on different devices
@@ -48,11 +30,11 @@ class ForceTouchScene: SKScene {
                 return
             }
             
-            let size = (self.circleSize * maxSize) * 2
+            let size = (circleSize * maxSize) * 2
             circle.size = CGSize(width: size, height: size)
             
-            if (self.circleSize >= 1.0) {
-                 self.transitionBackground()
+            if (circleSize >= 1.0) {
+                transitionBackground()
             }
         }
     }
@@ -88,7 +70,7 @@ class ForceTouchScene: SKScene {
         for node in self.children {
             if let label = node as? SKLabelNode {
                 if label.alpha == 1.0 { // only buttons have an alpha of 1.0
-                    label.fontColor = SpinZoneManager.manager.currentColor
+                    label.fontColor = backgroundColor
                 }
             }
         }
@@ -120,7 +102,6 @@ class ForceTouchScene: SKScene {
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
-
             currentTouchPosition = touch.location(in: self)
             
             if circle == nil {
@@ -129,7 +110,7 @@ class ForceTouchScene: SKScene {
             
             if circle.scene == nil && !stop {
                 circle.position = currentTouchPosition
-                self.addChild(circle)
+                addChild(circle)
             }
             
             if #available(iOS 9.0, *) {
