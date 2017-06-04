@@ -22,10 +22,10 @@ class DynamicScene: PlayableClickScene {
 
     func dynamicAnimate(sprite: SKSpriteNode, startingFromIndex index: Int = 0) {
         var startArray = [SKAction]()
-        for i in index...SpinZoneManager.manager.themes.count - 1 {
-            startArray.append(SpinZoneManager.manager.colorActions[i])
+        for i in index...SpinZoneManager.themes.themes.count - 1 {
+            startArray.append(SpinZoneManager.themes.colorActions[i])
         }
-        sprite.run(SKAction.sequence([SKAction.sequence(startArray), SKAction.repeatForever(SKAction.sequence(SpinZoneManager.manager.colorActions))]))
+        sprite.run(SKAction.sequence([SKAction.sequence(startArray), SKAction.repeatForever(SKAction.sequence(SpinZoneManager.themes.colorActions))]))
     }
-
+    
 }

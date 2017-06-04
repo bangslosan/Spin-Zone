@@ -20,7 +20,7 @@ class BallSprite: SKSpriteNode {
         super.init(texture: texture, color: UIColor.white, size: CGSize(width: Constants.ballRadius, height: Constants.ballRadius))
         self.size = CGSize(width: Constants.ballRadius, height: Constants.ballRadius)
 
-        self.color = SpinZoneManager.manager.nextColor
+        self.color = SpinZoneManager.themes.nextColor
         setup(on: zoneLevel)
     }
 
@@ -36,7 +36,7 @@ class BallSprite: SKSpriteNode {
         func setupBall() {
             run(followAction(on: zoneLevel, rad: CGFloat(CGFloat.radian(fromDegree: Constants.angle / 2) + zoneLevel.zRotation)))
 
-            zoneLevel.gameModel.scene.dynamicAnimate(sprite: self, startingFromIndex: SpinZoneManager.manager.ballNextIndex)
+            zoneLevel.gameModel.scene.dynamicAnimate(sprite: self, startingFromIndex: SpinZoneManager.themes.ballNextIndex)
         }
 
         setupPhysics()

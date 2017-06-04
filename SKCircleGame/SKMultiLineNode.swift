@@ -81,7 +81,6 @@ class SKMultilineLabel: SKNode {
                 wordCount+=1
                 if wordCount > words.count-1
                 {
-                    //label.text = "\(lineString) \(words[wordCount])"
                     finalLine = true
                     break
                 }

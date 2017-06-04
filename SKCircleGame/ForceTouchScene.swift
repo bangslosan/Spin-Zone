@@ -49,8 +49,8 @@ class ForceTouchScene: SKScene {
     
     func createCircle() -> SKSpriteNode {
         let circle = SKShapeNode(circleOfRadius: self.size.height)
-        circle.strokeColor = SpinZoneManager.manager.nextColor
-        circle.fillColor = SpinZoneManager.manager.nextColor
+        circle.strokeColor = SpinZoneManager.themes.nextColor
+        circle.fillColor = SpinZoneManager.themes.nextColor
         let sprite = SKSpriteNode(texture: SKView().texture(from: circle)!)
         sprite.zPosition = -1
         sprite.size = CGSize.zero
@@ -60,8 +60,9 @@ class ForceTouchScene: SKScene {
     func transitionBackground() {
         stop = true
         
-        self.backgroundColor = SpinZoneManager.manager.nextColor
-        SpinZoneManager.manager.currentIndex += 1
+        SpinZoneManager.themes.updateColors()
+        self.backgroundColor = SpinZoneManager.themes.nextColor
+        SpinZoneManager.themes.currentIndex += 1
 
         removeCircle()
         self.circle = self.createCircle()

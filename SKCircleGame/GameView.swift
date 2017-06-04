@@ -33,7 +33,8 @@ public class GameView: SKView {
     init(level: Int, model: GameModel) {
         self.level = level
         self.gameModel = model
-        super.init(frame: CGRect.zero) // TODO: set to 90% of highest between width and height
+        super.init(frame: CGRect.zero)
+        
         setup()
     }
 

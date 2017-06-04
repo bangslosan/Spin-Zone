@@ -230,4 +230,7 @@ extension SKScene {
         self.addChild(emitter)
     }
 
+    func updateColor(_ newColor: UIColor) {
+        
+    }
 }
