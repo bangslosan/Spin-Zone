@@ -39,7 +39,12 @@ class ThemeManager {
     
     var colorActions: [SKAction] {
         return themes.map {
-            return SKAction.sequence([SKAction.run{ self.currentIndex += 1 }, SKAction.colorize(with: $0, colorBlendFactor: 1.0, duration: 15.0), ])
+            return SKAction.sequence([SKAction.run {
+                // before starting next color change, change index & update all scene backgrounds
+                self.currentIndex += 1
+                // TODO: have it skip current view so the background view is not overriden
+                // self.updateColors()
+                }, SKAction.colorize(with: $0, colorBlendFactor: 1.0, duration: 15.0), ])
         }
     }
     

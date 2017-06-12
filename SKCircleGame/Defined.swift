@@ -15,14 +15,14 @@ struct Constants {
     static let bottomLeft = CGPoint(x: 0, y: baseSize.height)
     static let bottomRight = CGPoint(x: baseSize.width, y: baseSize.height)
     
+    static var xScale = currentSize.width / baseSize.width
+    static var yScale = currentSize.height / baseSize.height
     static let baseSize = CGSize(width: 375, height: 667)
     static var currentSize: CGSize! = nil
     
     static let sceneTitlePosition = CGPoint(x: currentSize.width / 2, y: currentSize.height - 60.yScaled)
     
     static var center = CGPoint(x: currentSize.width / 2, y: currentSize.height / 2)
-    static var xScale = currentSize.width / baseSize.width
-    static var yScale = currentSize.height / baseSize.height
     
     static var scaledRadius = 50.xScaled
     static var xScaledIncrease = 25.xScaled

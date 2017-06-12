@@ -97,6 +97,7 @@ class SKMultilineLabel: SKNode {
                 if (!finalLine) {
                     lineString = lineStringBeforeAddingWord
                 }
+
                 label.text = lineString
                 var linePos = pos
                 if (alignment == .left) {

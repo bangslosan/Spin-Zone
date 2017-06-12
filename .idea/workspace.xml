@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="508c4735-f555-4d75-a702-24bc0f09463a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SKCircleGame/ThemeManager.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SKCircleGame/BallSprite.swift" afterPath="$PROJECT_DIR$/SKCircleGame/BallSprite.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SKCircleGame/ButtonSprite.swift" afterPath="$PROJECT_DIR$/SKCircleGame/ButtonSprite.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SKCircleGame/DynamicScene.swift" afterPath="$PROJECT_DIR$/SKCircleGame/DynamicScene.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SKCircleGame/Extensions.swift" afterPath="$PROJECT_DIR$/SKCircleGame/Extensions.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SKCircleGame/ForceTouchScene.swift" afterPath="$PROJECT_DIR$/SKCircleGame/ForceTouchScene.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SKCircleGame/GameStartMenu.swift" afterPath="$PROJECT_DIR$/SKCircleGame/GameStartMenu.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SKCircleGame/GameView.swift" afterPath="$PROJECT_DIR$/SKCircleGame/GameView.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SKCircleGame/ClickableScene.swift" afterPath="$PROJECT_DIR$/SKCircleGame/ClickableScene.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SKCircleGame/SKMultiLineNode.swift" afterPath="$PROJECT_DIR$/SKCircleGame/SKMultiLineNode.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SKCircleGame/SpinZoneManager.swift" afterPath="$PROJECT_DIR$/SKCircleGame/SpinZoneManager.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SKCircleGame/TransitionHandler.swift" afterPath="$PROJECT_DIR$/SKCircleGame/TransitionHandler.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Spin Zone.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Spin Zone.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SKCircleGame/ThemeManager.swift" afterPath="$PROJECT_DIR$/SKCircleGame/ThemeManager.swift" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,12 +17,24 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulatoriPhone_7_10.3_x86_64_1" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SKMultiLineNode.swift" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SKMultiLineNode.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SKCircleGame/SKMultiLineNode.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="97" column="17" lean-forward="true" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
+            <state relative-caret-position="158">
+              <caret line="100" column="24" lean-forward="true" selection-start-line="100" selection-start-column="24" selection-end-line="100" selection-end-column="24" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ButtonSprite.swift" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SKCircleGame/ButtonSprite.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+              <folding>
+                <element signature="e#151#167#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,7 +101,6 @@
         <option value="$PROJECT_DIR$/SKCircleGame/GameModel.swift" />
         <option value="$PROJECT_DIR$/SKCircleGame/DynamicBackground.swift" />
         <option value="$PROJECT_DIR$/SKCircleGame/ForceTouchScene.swift" />
-        <option value="$PROJECT_DIR$/SKCircleGame/ButtonSprite.swift" />
         <option value="$PROJECT_DIR$/SKCircleGame/GameStartMenu.swift" />
         <option value="$PROJECT_DIR$/SKCircleGame/DynamicScene" />
         <option value="$PROJECT_DIR$/SKCircleGame/BallSprite.swift" />
@@ -106,6 +108,7 @@
         <option value="$PROJECT_DIR$/SKCircleGame/DynamicScene.swift" />
         <option value="$PROJECT_DIR$/SKCircleGame/SpinZoneManager.swift" />
         <option value="$PROJECT_DIR$/SKCircleGame/SKMultiLineNode.swift" />
+        <option value="$PROJECT_DIR$/SKCircleGame/ButtonSprite.swift" />
       </list>
     </option>
   </component>
@@ -278,6 +281,24 @@
               <option name="myItemId" value="Spin Zone" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Products" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Spin Zone" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Frameworks" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -385,6 +406,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2359375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -446,41 +468,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SKCircleGame/GameScene.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SKCircleGame/DynamicScene.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="1" lean-forward="false" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SKCircleGame/BallSprite.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SKCircleGame/SpinZoneManager.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding>
-            <element signature="e#149#165#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SKCircleGame/GameScene.swift">
+    <entry file="file://$PROJECT_DIR$/SKCircleGame/SKMultiLineNode.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -488,21 +476,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SKCircleGame/GameScene.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SKCircleGame/DynamicScene.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="1" lean-forward="false" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SKCircleGame/SpinZoneManager.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
-          <folding>
-            <element signature="e#149#165#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -510,7 +494,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SKCircleGame/SpinZoneManager.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SKCircleGame/GameScene.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SKCircleGame/DynamicScene.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="1" lean-forward="false" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SKCircleGame/SpinZoneManager.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SKCircleGame/BallSprite.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -539,9 +557,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#149#165#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -585,7 +600,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-145">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -635,13 +649,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="16" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SKCircleGame/ButtonSprite.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="19" column="130" lean-forward="false" selection-start-line="19" selection-start-column="130" selection-end-line="19" selection-end-column="130" />
         </state>
       </provider>
     </entry>
@@ -713,9 +720,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-          <folding>
-            <element signature="e#149#165#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -723,7 +727,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
           <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -731,7 +734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -739,15 +741,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SKCircleGame/SKMultiLineNode.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="97" column="17" lean-forward="true" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
+        <state relative-caret-position="158">
+          <caret line="100" column="24" lean-forward="true" selection-start-line="100" selection-start-column="24" selection-end-line="100" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SKCircleGame/ButtonSprite.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding>
+            <element signature="e#151#167#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

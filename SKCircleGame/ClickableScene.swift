@@ -33,7 +33,6 @@ class ClickableScene: ForceTouchScene {
         } else {
             super.touchesMoved(touches, with: event)
             makingCricle = true
-            print("t2")
         }
     }
     
