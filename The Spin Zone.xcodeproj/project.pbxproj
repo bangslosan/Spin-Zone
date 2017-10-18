@@ -1,0 +1,354 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43A71AE41F96D90E00F3ADBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A71AE31F96D90E00F3ADBA /* AppDelegate.swift */; };
+		43A71AE61F96D90E00F3ADBA /* StartMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A71AE51F96D90E00F3ADBA /* StartMenuViewController.swift */; };
+		43A71AE91F96D90E00F3ADBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A71AE71F96D90E00F3ADBA /* Main.storyboard */; };
+		43A71AEB1F96D90E00F3ADBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A71AEA1F96D90E00F3ADBA /* Assets.xcassets */; };
+		43A71AEE1F96D90E00F3ADBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A71AEC1F96D90E00F3ADBA /* LaunchScreen.storyboard */; };
+		43A71AF61F96DA9B00F3ADBA /* GameplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A71AF51F96DA9B00F3ADBA /* GameplayViewController.swift */; };
+		43A71AF81F96DBA400F3ADBA /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A71AF71F96DBA400F3ADBA /* GameManager.swift */; };
+		43A71AFB1F96E54B00F3ADBA /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A71AFA1F96E54B00F3ADBA /* GameKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		43A71AE01F96D90E00F3ADBA /* The Spin Zone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Spin Zone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43A71AE31F96D90E00F3ADBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		43A71AE51F96D90E00F3ADBA /* StartMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuViewController.swift; sourceTree = "<group>"; };
+		43A71AE81F96D90E00F3ADBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		43A71AEA1F96D90E00F3ADBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		43A71AED1F96D90E00F3ADBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		43A71AEF1F96D90E00F3ADBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43A71AF51F96DA9B00F3ADBA /* GameplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayViewController.swift; sourceTree = "<group>"; };
+		43A71AF71F96DBA400F3ADBA /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		43A71AFA1F96E54B00F3ADBA /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		43A71ADD1F96D90E00F3ADBA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43A71AFB1F96E54B00F3ADBA /* GameKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		43A71AD71F96D90E00F3ADBA = {
+			isa = PBXGroup;
+			children = (
+				43A71AE21F96D90E00F3ADBA /* The Spin Zone */,
+				43A71AE11F96D90E00F3ADBA /* Products */,
+				43A71AF91F96E54B00F3ADBA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		43A71AE11F96D90E00F3ADBA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43A71AE01F96D90E00F3ADBA /* The Spin Zone.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		43A71AE21F96D90E00F3ADBA /* The Spin Zone */ = {
+			isa = PBXGroup;
+			children = (
+				43A71AE31F96D90E00F3ADBA /* AppDelegate.swift */,
+				43A71AE51F96D90E00F3ADBA /* StartMenuViewController.swift */,
+				43A71AE71F96D90E00F3ADBA /* Main.storyboard */,
+				43A71AEA1F96D90E00F3ADBA /* Assets.xcassets */,
+				43A71AEC1F96D90E00F3ADBA /* LaunchScreen.storyboard */,
+				43A71AEF1F96D90E00F3ADBA /* Info.plist */,
+				43A71AF51F96DA9B00F3ADBA /* GameplayViewController.swift */,
+				43A71AF71F96DBA400F3ADBA /* GameManager.swift */,
+			);
+			path = "The Spin Zone";
+			sourceTree = "<group>";
+		};
+		43A71AF91F96E54B00F3ADBA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43A71AFA1F96E54B00F3ADBA /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		43A71ADF1F96D90E00F3ADBA /* The Spin Zone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43A71AF21F96D90E00F3ADBA /* Build configuration list for PBXNativeTarget "The Spin Zone" */;
+			buildPhases = (
+				43A71ADC1F96D90E00F3ADBA /* Sources */,
+				43A71ADD1F96D90E00F3ADBA /* Frameworks */,
+				43A71ADE1F96D90E00F3ADBA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "The Spin Zone";
+			productName = "The Spin Zone";
+			productReference = 43A71AE01F96D90E00F3ADBA /* The Spin Zone.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		43A71AD81F96D90E00F3ADBA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Nicholas Grana";
+				TargetAttributes = {
+					43A71ADF1F96D90E00F3ADBA = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 43A71ADB1F96D90E00F3ADBA /* Build configuration list for PBXProject "The Spin Zone" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 43A71AD71F96D90E00F3ADBA;
+			productRefGroup = 43A71AE11F96D90E00F3ADBA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				43A71ADF1F96D90E00F3ADBA /* The Spin Zone */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		43A71ADE1F96D90E00F3ADBA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43A71AEE1F96D90E00F3ADBA /* LaunchScreen.storyboard in Resources */,
+				43A71AEB1F96D90E00F3ADBA /* Assets.xcassets in Resources */,
+				43A71AE91F96D90E00F3ADBA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		43A71ADC1F96D90E00F3ADBA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43A71AE61F96D90E00F3ADBA /* StartMenuViewController.swift in Sources */,
+				43A71AF81F96DBA400F3ADBA /* GameManager.swift in Sources */,
+				43A71AE41F96D90E00F3ADBA /* AppDelegate.swift in Sources */,
+				43A71AF61F96DA9B00F3ADBA /* GameplayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		43A71AE71F96D90E00F3ADBA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43A71AE81F96D90E00F3ADBA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		43A71AEC1F96D90E00F3ADBA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43A71AED1F96D90E00F3ADBA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		43A71AF01F96D90E00F3ADBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		43A71AF11F96D90E00F3ADBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		43A71AF31F96D90E00F3ADBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6B5AP37L3T;
+				INFOPLIST_FILE = "The Spin Zone/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nicholasgrana.The-Spin-Zone";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		43A71AF41F96D90E00F3ADBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6B5AP37L3T;
+				INFOPLIST_FILE = "The Spin Zone/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nicholasgrana.The-Spin-Zone";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		43A71ADB1F96D90E00F3ADBA /* Build configuration list for PBXProject "The Spin Zone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43A71AF01F96D90E00F3ADBA /* Debug */,
+				43A71AF11F96D90E00F3ADBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43A71AF21F96D90E00F3ADBA /* Build configuration list for PBXNativeTarget "The Spin Zone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43A71AF31F96D90E00F3ADBA /* Debug */,
+				43A71AF41F96D90E00F3ADBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 43A71AD81F96D90E00F3ADBA /* Project object */;
+}
