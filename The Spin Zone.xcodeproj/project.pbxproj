@@ -15,6 +15,12 @@
 		43A71AF61F96DA9B00F3ADBA /* GameplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A71AF51F96DA9B00F3ADBA /* GameplayViewController.swift */; };
 		43A71AF81F96DBA400F3ADBA /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A71AF71F96DBA400F3ADBA /* GameManager.swift */; };
 		43A71AFB1F96E54B00F3ADBA /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A71AFA1F96E54B00F3ADBA /* GameKit.framework */; };
+		43A71B0A1F98337600F3ADBA /* ArchPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A71B091F98337600F3ADBA /* ArchPath.swift */; };
+		43A71B0C1F9833A100F3ADBA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A71B0B1F9833A100F3ADBA /* Constants.swift */; };
+		43A71B0E1F98354700F3ADBA /* CGFloat+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A71B0D1F98354700F3ADBA /* CGFloat+Math.swift */; };
+		43A71B111F98356600F3ADBA /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A71B101F98356600F3ADBA /* UIColor+Theme.swift */; };
+		43A71B131F9835A400F3ADBA /* Array+Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A71B121F9835A400F3ADBA /* Array+Index.swift */; };
+		43A71B171F983ABA00F3ADBA /* BallNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A71B161F983ABA00F3ADBA /* BallNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,12 @@
 		43A71AF51F96DA9B00F3ADBA /* GameplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayViewController.swift; sourceTree = "<group>"; };
 		43A71AF71F96DBA400F3ADBA /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		43A71AFA1F96E54B00F3ADBA /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		43A71B091F98337600F3ADBA /* ArchPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchPath.swift; sourceTree = "<group>"; };
+		43A71B0B1F9833A100F3ADBA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		43A71B0D1F98354700F3ADBA /* CGFloat+Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Math.swift"; sourceTree = "<group>"; };
+		43A71B101F98356600F3ADBA /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
+		43A71B121F9835A400F3ADBA /* Array+Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Index.swift"; sourceTree = "<group>"; };
+		43A71B161F983ABA00F3ADBA /* BallNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +82,10 @@
 				43A71AEF1F96D90E00F3ADBA /* Info.plist */,
 				43A71AF51F96DA9B00F3ADBA /* GameplayViewController.swift */,
 				43A71AF71F96DBA400F3ADBA /* GameManager.swift */,
+				43A71B091F98337600F3ADBA /* ArchPath.swift */,
+				43A71B0B1F9833A100F3ADBA /* Constants.swift */,
+				43A71B181F983B3B00F3ADBA /* nodes */,
+				43A71B0F1F98355300F3ADBA /* extensions */,
 			);
 			path = "The Spin Zone";
 			sourceTree = "<group>";
@@ -80,6 +96,24 @@
 				43A71AFA1F96E54B00F3ADBA /* GameKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43A71B0F1F98355300F3ADBA /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				43A71B0D1F98354700F3ADBA /* CGFloat+Math.swift */,
+				43A71B101F98356600F3ADBA /* UIColor+Theme.swift */,
+				43A71B121F9835A400F3ADBA /* Array+Index.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		43A71B181F983B3B00F3ADBA /* nodes */ = {
+			isa = PBXGroup;
+			children = (
+				43A71B161F983ABA00F3ADBA /* BallNode.swift */,
+			);
+			path = nodes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,10 +193,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43A71B0A1F98337600F3ADBA /* ArchPath.swift in Sources */,
+				43A71B111F98356600F3ADBA /* UIColor+Theme.swift in Sources */,
+				43A71B171F983ABA00F3ADBA /* BallNode.swift in Sources */,
 				43A71AE61F96D90E00F3ADBA /* StartMenuViewController.swift in Sources */,
 				43A71AF81F96DBA400F3ADBA /* GameManager.swift in Sources */,
+				43A71B131F9835A400F3ADBA /* Array+Index.swift in Sources */,
 				43A71AE41F96D90E00F3ADBA /* AppDelegate.swift in Sources */,
+				43A71B0E1F98354700F3ADBA /* CGFloat+Math.swift in Sources */,
 				43A71AF61F96DA9B00F3ADBA /* GameplayViewController.swift in Sources */,
+				43A71B0C1F9833A100F3ADBA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

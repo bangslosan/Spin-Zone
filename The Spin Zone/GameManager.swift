@@ -8,44 +8,39 @@
 
 import UIKit
 
-typealias Theme = UIColor
-
-extension Array {
-    
-    func nextIndex(at index: Int) -> Int {
-        if index >= count {
-            return 0
-        }
-        return index
-    }
-    
-    func nextIndexElement(at index: Int) -> Element {
-        return self[nextIndex(at: index)]
-    }
-    
-}
-
-extension Theme {
-    static let gray = UIColor(red:0.21, green:0.21, blue:0.21, alpha:1.00)
-    static let red = UIColor(red:0.54, green:0.01, blue:0.04, alpha:1.00)
-    static let orange = UIColor(red:0.87, green:0.31, blue:0.10, alpha:1.00)
-    static let yellow = UIColor(red:1.00, green:0.64, blue:0.00, alpha:1.00)
-    static let green = UIColor(red:0.19, green:0.67, blue:0.15, alpha:1.00)
-    static let blue = UIColor(red:0.00, green:0.43, blue:0.73, alpha:1.00)
-    static let purple = UIColor(red:0.18, green:0.13, blue:0.40, alpha:1.00)
-    static let pink = UIColor(red:0.94, green:0.24, blue:0.43, alpha:1.00)
-}
-
 class GameManager {
+    
+    // MARK: Properties
     
     let levels = LevelManager()
     let themes = ThemeManager()
     
-    // let barriers = [Int: BarrierPath]()
-    // let gates = [Int: GatePath]()
+    var barriers = [Int: BarrierPath]()
+    var gates = [Int: GatePath]()
     
     var viewSize: CGSize
     
+    let angle = -60
+
+    lazy var lineWidth: CGFloat = {
+        return (width * 0.24) / 10
+    }()
+    lazy var scaledRadius: CGFloat = {
+        return (width * 0.27) / 2
+    }()
+    lazy var xScaledIncrease: CGFloat = {
+        return (width * 0.53) / 8
+    }()
+    lazy var ballRadius: CGFloat = {
+        return width * 0.05
+    }()
+    lazy var width: CGFloat = {
+        return min(viewSize.width * 0.95, viewSize.height * 0.95)
+    }()
+    
+    // MARK: Constructors
+    
+    // create a new manager and initialize everything
     init(size: CGSize) {
         self.viewSize = size
         
@@ -55,13 +50,13 @@ class GameManager {
     
     func loadBarriers() {
         for level in 1...6 {
-            // barriers[level] = BarrierPath(level: level)
+            barriers[level] = BarrierPath(game: self, level: level)
         }
     }
     
     func loadGates() {
         for level in 1...6 {
-            // gates[level] = GatePath(level: level)
+            gates[level] = GatePath(game: self, level: level)
         }
     }
     
@@ -69,13 +64,15 @@ class GameManager {
 
 class LevelManager {
     
+    // convience for getting the next level
     var next: Int {
-        let fromConfig = UserDefaults.standard.integer(forKey: "score")
-        return (fromConfig == 0 ? 1 : fromConfig) + 1
+        return current + 1
     }
     
+    // gets current level from storage
     var current: Int {
-        return next - 1
+        let fromConfig = UserDefaults.standard.integer(forKey: "score")
+        return (fromConfig == 0 ? 1 : fromConfig)
     }
     
 }
@@ -93,14 +90,17 @@ class ThemeManager {
         UIColor.pink
     ]
     
+    // current theme applied
     var current: Theme {
         return availableThemes[index]
     }
     
+    // next theme that may be applied
     var next: Theme {
         return availableThemes.nextIndexElement(at: index + 1)
     }
     
+    // current index of theme relative to availableThemes
     var index: Int {
         get {
             return UserDefaults.standard.integer(forKey: "color-index")
