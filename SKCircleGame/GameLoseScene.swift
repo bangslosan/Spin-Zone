@@ -17,12 +17,10 @@ class GameLoseScene: ClickableScene {
         
         self.transitionHandler = TransitionHandler(buttons:[
              "try again": (scene: .game, direction: .up),
-             "menu": (scene: .start, direction: .right),
-             "?": (scene: .about, direction: .down)])
+             "menu": (scene: .start, direction: .right)])
         self.sceneTitle(name: "Game Over", splitter: " ")
         
         addButtons()
-        self.addChild(ButtonSprite(bottomLeftTitle: "?"))
         addFloatingParticles()
     }
     

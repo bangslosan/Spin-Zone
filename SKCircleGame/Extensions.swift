@@ -95,7 +95,7 @@ extension SKScene {
         var i = 0
         var label0: SKLabelNode!
         var label1: SKLabelNode!
-        let splits = name.characters.split(separator: splitter)
+        let splits = name.split(separator: splitter)
 
         for split in splits where i < 2 {
             let label = SKLabelNode(text: String(split))

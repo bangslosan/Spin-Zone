@@ -16,7 +16,7 @@ class ButtonSprite: SKSpriteNode {
     let label: SKLabelNode
     var runOnClick: () -> () = { }
     
-    init(title: String, under: ButtonSprite?, position: CGPoint=Constants.center) {
+    init(title: String, under: ButtonSprite?, position: CGPoint = Constants.center) {
         label = SKLabelNode(title: title, fontSize: Constants.buttonFont, fontName: "Junegull", fontColor: SpinZoneManager.themes.current)
 
         let shape = SKShapeNode(rect: CGRect(origin: CGPoint.zero, size: self.defaultSize), cornerRadius: (self.defaultSize.height - 1) / 2)
@@ -32,29 +32,6 @@ class ButtonSprite: SKSpriteNode {
 
         label.zPosition = 3
         self.zPosition = 2
-    }
-    
-    init(bottomLeftTitle: String) {
-        
-        label = SKLabelNode(title: bottomLeftTitle, fontSize: 40)
-        label.alpha = 0.95
-        
-        let backgroundShape = SKShapeNode(circleOfRadius: Constants.smallButtonRadius)
-        backgroundShape.lineWidth = 0
-        backgroundShape.fillColor = UIColor.black
-        backgroundShape.alpha = 0.10
-        
-        super.init(texture: SKView().texture(from: backgroundShape)!, color: UIColor.white, size: CGSize(width: Constants.smallButtonRadius * 2, height: Constants.smallButtonRadius * 2))
-        
-        self.name = bottomLeftTitle
-        
-        // put at the bottom left
-        let leftPadding = 15.xScaled + Constants.smallButtonRadius
-        let bottomPadding = 15.xScaled + Constants.smallButtonRadius
-        let position = CGPoint(x: leftPadding, y: bottomPadding)
-        self.position = position
-        
-        self.addChild(label)
     }
     
     static var circleTexture: SKTexture {

@@ -16,8 +16,6 @@ class BallSprite: SKSpriteNode {
         spriteShape.fillColor = UIColor.white
         spriteShape.strokeColor = UIColor.white
         let texture = SKView().texture(from: spriteShape)
-        // TODO: have color start off as nextColor instead of white without having blend issues
-        // texture.color = SpinZoneManager.themes.nextColor
         
         super.init(texture: texture, color: UIColor.white, size: CGSize(width: Constants.ballRadius, height: Constants.ballRadius))
         self.size = CGSize(width: Constants.ballRadius, height: Constants.ballRadius)
@@ -37,8 +35,6 @@ class BallSprite: SKSpriteNode {
         }
         func setupBall() {
             run(followAction(on: zoneLevel, rad: CGFloat(CGFloat.radian(fromDegree: Constants.angle / 2) + zoneLevel.zRotation)))
-
-            zoneLevel.gameModel.scene.dynamicAnimate(sprite: self, startingFromIndex: SpinZoneManager.themes.ballNextIndex)
         }
 
         setupPhysics()

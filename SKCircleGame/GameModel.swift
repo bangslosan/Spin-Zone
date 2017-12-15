@@ -20,11 +20,6 @@ class GameModel {
         return nextLevel - 1
     }
     
-    static var retries: Int {
-        // let fromConfig = UserDefaults.standard.integer(forKey: "retries")
-        return 1
-    }
-    
     var clockwise = true
     lazy var scoreLabel: ScoreLabel = ScoreLabel(scene: self.scene)
     let scene: GameScene!
@@ -58,13 +53,6 @@ class GameModel {
         UserDefaults.standard.set(GameModel.nextLevel, forKey: "score")
         
         presentNextScene()
-        
-        /*
-        if (true) {
-            earnRetry()
-        } else {
-            presentNextScene()
-        }*/
     }
     
     func presentNextScene() {
@@ -76,20 +64,6 @@ class GameModel {
         nextScene.scaleMode = .aspectFill
         nextScene.backgroundColor = self.scene.backgroundColor
         self.scene.view?.presentScene(nextScene, transition: transition)
-    }
-    
-    func earnRetry() {
-        if (true/*GameModel.nextLevel % 10 == 1*/) { // 11, 21, etc, give a new retry
-            let alert = UIAlertController(title: "1 Rety", message: "Congradulations! You have earned 1 Rety, earn one every 10 Levels", preferredStyle: .alert)
-            let action = UIAlertAction(title: "Got it", style: .default, handler: { alert in
-                UserDefaults.standard.set(GameModel.retries + 1, forKey: "retries")
-            })
-            
-            alert.addAction(action)
-            alert.present((self.scene.view!.window!.rootViewController)!, animated: true, completion: {
-                self.presentNextScene()
-            })
-        }
     }
     
     func lose() {

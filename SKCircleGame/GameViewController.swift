@@ -14,7 +14,6 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
     
     // MARK: Overriden methods
     
-    // constraints, uikit + spritekit, tvOS
     var gameStartMenu: GameStartMenu! = nil
     
     override func viewDidLoad() {

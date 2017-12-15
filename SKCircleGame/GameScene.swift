@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class GameScene: DynamicScene, SKPhysicsContactDelegate {
+class GameScene: PlayableClickScene, SKPhysicsContactDelegate {
 
 	var gameModel: GameModel!
 	var gameView: GameView!
@@ -29,7 +29,6 @@ class GameScene: DynamicScene, SKPhysicsContactDelegate {
 			return
 		}
 
-		transitionHandler = TransitionHandler(buttons: ["||": (scene: .pause, direction: .up)])
 		gameScene = self
 		physicsWorld.contactDelegate = self
 
@@ -38,7 +37,6 @@ class GameScene: DynamicScene, SKPhysicsContactDelegate {
 		gameModel = GameModel(scene: self, level: level)
 		gameView = GameView(level: level, model: gameModel)
 
-		self.addChild(ButtonSprite(bottomLeftTitle: "||"))
 	}
 
 	// used to block touches while the physics is being applied
@@ -82,10 +80,8 @@ class GameScene: DynamicScene, SKPhysicsContactDelegate {
 
 		if touched.categoryBitMask == Catigory.goal.rawValue {
 			gameModel.updateScore()
-			// gameModel.audio.playPing()
 		} else if touched.categoryBitMask == Catigory.track.rawValue {
 			gameModel.lose()
-			// gameModel.audio.playPing()
 		}
 
 		touchable = false

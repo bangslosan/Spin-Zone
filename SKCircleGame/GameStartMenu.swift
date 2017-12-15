@@ -18,8 +18,7 @@ class GameStartMenu: ClickableScene {
         
         self.backgroundColor = SpinZoneManager.themes.currentColor
         self.transitionHandler = TransitionHandler(buttons: [
-            "play": (scene: .game, direction: .left),
-            "?": (scene: .about, direction: .down)])
+            "play": (scene: .game, direction: .left)])
         
         self.sceneTitle(name: "Spin Zone", splitter: " ")
         
@@ -59,7 +58,6 @@ class GameStartMenu: ClickableScene {
         self.addChild(specialScore.score)
         self.addChild(specialScore.levelTitle)
         
-        self.addChild(ButtonSprite(bottomLeftTitle: "?"))
     }
 }
 

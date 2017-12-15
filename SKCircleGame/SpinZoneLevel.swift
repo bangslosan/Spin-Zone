@@ -183,7 +183,7 @@ class BarrierSprite: SKSpriteNode {
 
         run(SKAction.shrink(by: scale) {
             shape.removeFromParent()
-            SpinZoneLevel(from: self.zoneLevel)
+            let _  = SpinZoneLevel(from: self.zoneLevel)
         })
     }
 

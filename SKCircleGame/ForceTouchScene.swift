@@ -34,13 +34,21 @@ class ForceTouchScene: SKScene {
             circle.size = CGSize(width: size, height: size)
             
             if (circleSize >= 1.0) {
-                transitionBackground()
+                SpinZoneManager.themes.updateColors()
             }
         }
     }
     
+    override func willMove(from view: SKView) {
+        super.willMove(from: view)
+        
+        syncBackground()
+    }
+    
     override func sceneDidLoad() {
         super.sceneDidLoad()
+        
+        SpinZoneManager.themes.updateScenes.append(self)
         
         NotificationCenter.default.addObserver(self, selector: #selector(ForceTouchScene.removeCircle), name: NSNotification.Name(rawValue: "RemoveCircle"), object: nil)
     }
@@ -60,12 +68,16 @@ class ForceTouchScene: SKScene {
     func transitionBackground() {
         stop = true
         
-        SpinZoneManager.themes.updateColors()
-        self.backgroundColor = SpinZoneManager.themes.nextColor
         SpinZoneManager.themes.currentIndex += 1
 
         removeCircle()
         self.circle = self.createCircle()
+        
+        syncBackground()
+    }
+    
+    func syncBackground() {
+        self.backgroundColor = SpinZoneManager.themes.currentColor
         
         // change the fonts
         for node in self.children {
@@ -77,7 +89,7 @@ class ForceTouchScene: SKScene {
         }
     }
     
-    func removeCircle() {
+    @objc func removeCircle() {
         self.circleSize = 0.0
         self.circle?.removeFromParent()
         self.timer?.invalidate()

@@ -31,14 +31,6 @@ class TransitionHandler {
             case .start:
                 newScene = GameStartMenu(size: Constants.currentSize)
                 TransitionHandler.previousScene = current
-            case .about:
-                newScene = AboutScene(size: Constants.currentSize)
-                TransitionHandler.previousScene = current
-            case .pause:
-                newScene = PauseScene(size: Constants.currentSize)
-                TransitionHandler.previousScene = current
-            case .dynamic:
-                newScene = TransitionHandler.previousScene
         }
         newScene.backgroundColor = current.backgroundColor
         // Set the scale mode to scale to fit the window
@@ -57,7 +49,4 @@ class TransitionHandler {
 enum DestinationScene {
     case game
     case start
-    case about
-    case pause
-    case dynamic // for buttons like "Go Back" which does not have a set destination scene
 }
