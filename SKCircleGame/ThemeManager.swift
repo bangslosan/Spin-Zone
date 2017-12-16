@@ -28,11 +28,16 @@ class ThemeManager {
     
     var currentIndex: Int {
         get {
-            return UserDefaults.standard.integer(forKey: "color-index")
+            let index =  UserDefaults.standard.integer(forKey: "color-index")
+            return index < 0 || index > themes.count - 1 ? 0 : index
         }
         set {
             let v = newValue
-            UserDefaults.standard.set(v + 1 > themes.count - 1 ? 0 : v + 1, forKey: "color-index")
+            if (v < 0) {
+                UserDefaults.standard.set(0, forKey: "color-index")
+            } else {
+                UserDefaults.standard.set(v > themes.count - 1 ? 0 : v, forKey: "color-index")
+            }
         }
         
     }
@@ -50,11 +55,9 @@ class ThemeManager {
         return currentIndex + 1 > themes.count - 1 ? 0 : currentIndex + 1
     }
     
-    var ballNextIndex: Int {
-        return nextIndex + 1 > themes.count - 1 ? 0 : nextIndex + 1
-    }
-    
     func updateColors() {
+        SpinZoneManager.themes.currentIndex += 1
+
         for scene in updateScenes {
             scene.transitionBackground()
         }

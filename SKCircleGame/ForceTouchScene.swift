@@ -67,24 +67,20 @@ class ForceTouchScene: SKScene {
     
     func transitionBackground() {
         stop = true
-        
-        SpinZoneManager.themes.currentIndex += 1
 
         removeCircle()
         self.circle = self.createCircle()
-        
+                
         syncBackground()
     }
     
     func syncBackground() {
-        self.backgroundColor = SpinZoneManager.themes.currentColor
+        backgroundColor = SpinZoneManager.themes.currentColor
         
         // change the fonts
-        for node in self.children {
-            if let label = node as? SKLabelNode {
-                if label.alpha == 1.0 { // only buttons have an alpha of 1.0
-                    label.fontColor = backgroundColor
-                }
+        for node in children {
+            if let label = node as? SKLabelNode, label.alpha == 1.0 { // only buttons have an alpha of 1.0
+                label.fontColor = backgroundColor
             }
         }
     }

@@ -13,8 +13,8 @@ class BallSprite: SKSpriteNode {
 
     init(on zoneLevel: SpinZoneLevel) {
         let spriteShape = SKShapeNode(circleOfRadius: Constants.ballRadius)
-        spriteShape.fillColor = UIColor.white
-        spriteShape.strokeColor = UIColor.white
+        spriteShape.fillColor = SpinZoneManager.themes.nextColor
+        spriteShape.strokeColor = SpinZoneManager.themes.nextColor
         let texture = SKView().texture(from: spriteShape)
         
         super.init(texture: texture, color: UIColor.white, size: CGSize(width: Constants.ballRadius, height: Constants.ballRadius))
