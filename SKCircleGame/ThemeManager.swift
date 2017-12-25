@@ -10,9 +10,6 @@ import SpriteKit
 
 class ThemeManager {
     
-    // scenes that are to be updated on color change
-    var updateScenes = [ForceTouchScene]()
-    
     var current = UIColor.grayThemeBackground
     
     let themes = [
@@ -53,14 +50,6 @@ class ThemeManager {
     
     var nextIndex: Int {
         return currentIndex + 1 > themes.count - 1 ? 0 : currentIndex + 1
-    }
-    
-    func updateColors() {
-        SpinZoneManager.themes.currentIndex += 1
-
-        for scene in updateScenes {
-            scene.transitionBackground()
-        }
     }
     
 }

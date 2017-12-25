@@ -204,6 +204,17 @@ extension SKAction {
 
 extension SKScene {
 
+    func syncBackground() {
+        backgroundColor = SpinZoneManager.themes.currentColor
+        
+        // change the fonts
+        for node in children {
+            if let label = node as? SKLabelNode, label.alpha == 1.0 { // only buttons have an alpha of 1.0
+                label.fontColor = backgroundColor
+            }
+        }
+    }
+    
     func addFloatingParticles() {
         let circle = SKShapeNode(circleOfRadius: 20)
         circle.strokeColor = UIColor.clear

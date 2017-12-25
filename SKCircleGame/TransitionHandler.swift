@@ -36,10 +36,6 @@ class TransitionHandler {
         // Set the scale mode to scale to fit the window
         newScene.scaleMode = .aspectFill
         
-        if newScene is ForceTouchScene {
-            SpinZoneManager.themes.updateScenes.append(newScene as! ForceTouchScene)
-        }
-        
         return newScene
     }
 

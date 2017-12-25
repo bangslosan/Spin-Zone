@@ -24,6 +24,12 @@ class GameScene: PlayableClickScene, SKPhysicsContactDelegate {
 		}
 	}
 
+	override func willMove(from view: SKView) {
+		super.willMove(from: view)
+		
+		syncBackground()
+	}
+	
 	override func didMove(to view: SKView) {
 		if (TransitionHandler.previousScene == self) {
 			return
