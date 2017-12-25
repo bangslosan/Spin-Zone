@@ -11,8 +11,8 @@
 		43472C171DABF5CD00B00FAB /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43472C161DABF5CD00B00FAB /* GameScene.swift */; };
 		43472C191DABF5CD00B00FAB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43472C181DABF5CD00B00FAB /* GameViewController.swift */; };
 		43472C1C1DABF5CD00B00FAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43472C1A1DABF5CD00B00FAB /* Main.storyboard */; };
-		43472C1E1DABF5CD00B00FAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43472C1D1DABF5CD00B00FAB /* Assets.xcassets */; };
 		43479DCC1E19C19C0095917F /* GameLoseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43479DCB1E19C19C0095917F /* GameLoseScene.swift */; };
+		435366EF1FF07D4000801E00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 435366EE1FF07D4000801E00 /* Assets.xcassets */; };
 		4359F9FD1EB63BFA0064A8F0 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4359F9FC1EB63BFA0064A8F0 /* GameView.swift */; };
 		436AC0441E072D81007167D8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AC0431E072D81007167D8 /* Extensions.swift */; };
 		43B763AF1DE3D195006461C1 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B763AE1DE3D195006461C1 /* GameModel.swift */; };
@@ -41,8 +41,8 @@
 		43472C161DABF5CD00B00FAB /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; usesTabs = 1; };
 		43472C181DABF5CD00B00FAB /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		43472C1B1DABF5CD00B00FAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		43472C1D1DABF5CD00B00FAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43479DCB1E19C19C0095917F /* GameLoseScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLoseScene.swift; sourceTree = "<group>"; };
+		435366EE1FF07D4000801E00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4359F9FC1EB63BFA0064A8F0 /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		436AC0431E072D81007167D8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		43B763AE1DE3D195006461C1 /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
@@ -104,10 +104,10 @@
 				43B763BD1DE736B1006461C1 /* scene */,
 				43B763B61DE51979006461C1 /* sprites */,
 				43E7197E1E088D660026E32D /* Defined.swift */,
-				43472C1D1DABF5CD00B00FAB /* Assets.xcassets */,
 				4359F9FE1EB63C000064A8F0 /* game */,
 				68764B1FD640028EE51D0FF3 /* Supporting Files */,
 				68764F7C88177FBB48366C85 /* Info.plist */,
+				435366EE1FF07D4000801E00 /* Assets.xcassets */,
 			);
 			name = "Spin Zone";
 			path = SKCircleGame;
@@ -269,8 +269,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				43472C1C1DABF5CD00B00FAB /* Main.storyboard in Resources */,
-				43472C1E1DABF5CD00B00FAB /* Assets.xcassets in Resources */,
 				68764532A0FAE8677B4FE639 /* junegull.ttf in Resources */,
+				435366EF1FF07D4000801E00 /* Assets.xcassets in Resources */,
 				6876427F300DA916B410BAAC /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +398,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 			};
 			name = Debug;
 		};
@@ -446,6 +447,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -465,7 +467,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nicholasgrana.spinzone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -485,7 +487,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nicholasgrana.spinzone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
