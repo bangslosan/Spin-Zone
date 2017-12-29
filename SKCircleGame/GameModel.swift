@@ -30,6 +30,8 @@ class GameModel {
     }
 
     func addTopLevel() {
+        lose()
+        
         let spinZoneLevel = SpinZoneLevel(level: 6, model: self)
         scene.addChild(spinZoneLevel)
 
