@@ -74,7 +74,6 @@ class ForceTouchScene: SKScene {
     }
     
     @objc func removeCircle() {
-        // self.circleSize = 0.0
         self.circle?.removeFromParent()
         self.timer?.invalidate()
         self.timer = nil

@@ -30,8 +30,6 @@ class GameModel {
     }
 
     func addTopLevel() {
-        lose()
-        
         let spinZoneLevel = SpinZoneLevel(level: 6, model: self)
         scene.addChild(spinZoneLevel)
 
@@ -58,7 +56,7 @@ class GameModel {
     }
     
     func presentNextScene() {
-        let transition = SKTransition.push(with: .left, duration: 0.5)
+        let transition = SKTransition.push(with: .left, duration: 0.4)
         transition.pausesOutgoingScene = true
         transition.pausesIncomingScene = true
         
@@ -69,7 +67,7 @@ class GameModel {
     }
     
     func lose() {
-        let transition = SKTransition.push(with: .down, duration: 0.5)
+        let transition = SKTransition.push(with: .down, duration: 0.4)
         transition.pausesOutgoingScene = false
         transition.pausesIncomingScene = false
 

@@ -62,7 +62,7 @@ class ClickableScene: ForceTouchScene {
                 let button = transitionHandler.buttons[name]
                 if let button = button {
                     let newScene = transitionHandler.create(scene: button.scene, current: self)
-                    let transition = SKTransition.push(with: button.direction!, duration: 0.5)
+                    let transition = SKTransition.push(with: button.direction!, duration: 0.4)
                     transition.pausesIncomingScene = true
                     self.view!.presentScene(newScene, transition: transition)
                     // return to pretend creating / editing of superclass's circle creation

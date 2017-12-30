@@ -205,7 +205,9 @@ extension SKAction {
 extension SKScene {
 
     func syncBackground() {
+        
         backgroundColor = SpinZoneManager.themes.currentColor
+
         
         // change the fonts
         for node in children {
@@ -240,8 +242,5 @@ extension SKScene {
         emitter.yAcceleration = 7.0
         self.addChild(emitter)
     }
-
-    func updateColor(_ newColor: UIColor) {
-        
-    }
+    
 }
